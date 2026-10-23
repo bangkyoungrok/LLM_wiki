@@ -1,0 +1,318 @@
+# APPADAMSUSER
+
+테이블·뷰 297건 (분류별).
+
+## master (88)
+- [TI_BQMS002_INFA_USER](/schemas/APPADAMSUSER/tables/TI_BQMS002_INFA_USER.md) — BQMS 사내외 사용자마스타.
+- [TI_BQMS003_SYS_USE_MST_FULL](/schemas/APPADAMSUSER/tables/TI_BQMS003_SYS_USE_MST_FULL.md) — BQMS 사용자마스터-등록IP 정비되어 적재되는 테이블.
+- [TI_BQMS010_INFA_SITE](/schemas/APPADAMSUSER/tables/TI_BQMS010_INFA_SITE.md) — BQMS 사이트마스터.
+- [TI_BQMS015_CATEGORY](/schemas/APPADAMSUSER/tables/TI_BQMS015_CATEGORY.md) — 카테고리마스타.
+- [TI_BQMS023_MRO_VE_UNIT](/schemas/APPADAMSUSER/tables/TI_BQMS023_MRO_VE_UNIT.md) — MRO벤더단가_본사(SET). 키: SITE_CODE, ITEM_CODE, SP_CODE, CREATE_DT, HIST_SEQ.
+- [TI_BQMS024_INFA_VENDOR](/schemas/APPADAMSUSER/tables/TI_BQMS024_INFA_VENDOR.md) — BQMS 벤더마스터. 업체상세정보.
+- [TI_BQMS024_INFA_VENDOR_2](/schemas/APPADAMSUSER/tables/TI_BQMS024_INFA_VENDOR_2.md) — BQMS 벤더마스터. 업체상세정보 VERS 임시테이블(백업및확인용).
+- [TI_BQMS026_INFA_CTRT](/schemas/APPADAMSUSER/tables/TI_BQMS026_INFA_CTRT.md) — 계약마스터_본사(SET). 키: SITE_CODE, CTR_NO, CTR_DATE_START, CTR_DATE_END, EPR_CODE, CTR_CATEGORY_ID.
+- [TI_BQMS042_INFA_SOLE_VENDOR](/schemas/APPADAMSUSER/tables/TI_BQMS042_INFA_SOLE_VENDOR.md) — ERP 업체코드-BQMS의 SOLE VENDOR로 등록된 업체 리스트.
+- [TI_BQMS044_INFA_ITEM](/schemas/APPADAMSUSER/tables/TI_BQMS044_INFA_ITEM.md) — 카테고리 아이템-BQMS 관리 대상 ITEM MASTER. 생성일 2018.01.01 이후. 20201105 최초연계.
+- [TI_BQMS800](/schemas/APPADAMSUSER/tables/TI_BQMS800.md) — 업체(VENDOR)정보. 키: EPR_CD, ENTP_CD.
+- [TI_BQMS801](/schemas/APPADAMSUSER/tables/TI_BQMS801.md) — BQMS IP정보. 키: IP.
+- [TI_BQMS900](/schemas/APPADAMSUSER/tables/TI_BQMS900.md) — 법인-사이트코드정보.
+- [TI_BQMS_GR_CLSG](/schemas/APPADAMSUSER/tables/TI_BQMS_GR_CLSG.md) — 마감 마스터 신규 IF 20260923. 키: CLSG_NO.
+- [TI_BQMS_GR_GR_MST](/schemas/APPADAMSUSER/tables/TI_BQMS_GR_GR_MST.md) — 입고 마스터 신규 IF 20260723. 키: GR_NO.
+- [TI_BQMS_GR_MST](/schemas/APPADAMSUSER/tables/TI_BQMS_GR_MST.md) — 입고 마스터 신규 IF 20260923. 키: GR_NO.
+- [TI_BQMS_IEN_REQ](/schemas/APPADAMSUSER/tables/TI_BQMS_IEN_REQ.md) — 검수요청 마스터 20260923. 키: IEN_REQ_NO.
+- [TI_BQMS_MKT_PP_ACTIVITY_MST](/schemas/APPADAMSUSER/tables/TI_BQMS_MKT_PP_ACTIVITY_MST.md) — NERP PP 정보 신규 IF 20260923. 키: PROPOSAL_ID, PROPOSAL_ITEM_NO, ACT_ITEM_NO.
+- [TI_BQMS_PO_PO_MST](/schemas/APPADAMSUSER/tables/TI_BQMS_PO_PO_MST.md) — 발주 마스터, EO 번호 신규 IF 20260723. 키: PO_NO.
+- [TI_BQMS_PO_PR](/schemas/APPADAMSUSER/tables/TI_BQMS_PO_PR.md) — BQMS 의뢰정보 신규 IF 20260923. 키: PR_NO.
+- [TI_CIST001](/schemas/APPADAMSUSER/tables/TI_CIST001.md) — 거래선 정보(누적).
+- [TI_GMCS003](/schemas/APPADAMSUSER/tables/TI_GMCS003.md) — 프로모션마스터 [NTN_PM_PRMT_MST].
+- [TI_GMCS009](/schemas/APPADAMSUSER/tables/TI_GMCS009.md) — 판매마스터 [NTN_MA_SALES_MST].
+- [TI_GMCS010](/schemas/APPADAMSUSER/tables/TI_GMCS010.md) — 매장마스터 [NTN_MA_SITE_MST].
+- [TI_GRPB810](/schemas/APPADAMSUSER/tables/TI_GRPB810.md) — 거래선정보. 키: CMCD, ENTP_CD.
+- [TI_GRPB_B2B_FTZ](/schemas/APPADAMSUSER/tables/TI_GRPB_B2B_FTZ.md) — (B2B) FTZ정보(업로드) : Free Trade Zone.
+- [TI_GRPB_CFO](/schemas/APPADAMSUSER/tables/TI_GRPB_CFO.md) — 관리주재원 정보(업로드).
+- [TI_GRPB_COMPANY_AUDIT_AMT](/schemas/APPADAMSUSER/tables/TI_GRPB_COMPANY_AUDIT_AMT.md) — 시나리오법인별 사고금액 적용기준(20201022).
+- [TI_GRPB_CUSTOMER_H](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_H.md) — Customer Hierarchy(결합).
+- [TI_GRPB_CUSTOMER_HIERARCHY](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_HIERARCHY.md) — CUSTOMER HIERARCHY(업로드).
+- [TI_GRPB_CUSTOMER_H_ROOT](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_H_ROOT.md) — Customer Hierarchy(제외그룹).
+- [TI_GRPB_CUSTOMER_P](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_P.md) — Customer vs Payer 마스터(결합).
+- [TI_GRPB_DE_MKT_VENDER](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_MKT_VENDER.md) — 마케팅 비용 처리 벤더.
+- [TI_GRPB_INC_SITE_GROUP](/schemas/APPADAMSUSER/tables/TI_GRPB_INC_SITE_GROUP.md) — 셀아웃인센티브(Site Group).
+- [TI_GRPB_MD_MG](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_MG.md) — Material Group정보(ERP MM03조회 업로드).
+- [TI_GRPB_MD_MODEL](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_MODEL.md) — 모델정보.
+- [TI_GRPB_MD_MODEL_CM](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_MODEL_CM.md) — 모델정보_법인기준.
+- [TI_GRPB_PRICE_HEADER](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_HEADER.md) — 판가 Header 정보 : 15년~24년6월. 키: DOC_NO.
+- [TI_GRPB_TIME_ZONE](/schemas/APPADAMSUSER/tables/TI_GRPB_TIME_ZONE.md) — 선포타의심정황(TimeZone정보).
+- [TI_GRPF060](/schemas/APPADAMSUSER/tables/TI_GRPF060.md) — 매출차감 Payment Header.
+- [TI_GRPF063](/schemas/APPADAMSUSER/tables/TI_GRPF063.md) — 매출차감 Condition Header [ZTMKC00051].
+- [TI_GRPF801](/schemas/APPADAMSUSER/tables/TI_GRPF801.md) — 임직원기본정보(GHRP).
+- [TI_GRPF802](/schemas/APPADAMSUSER/tables/TI_GRPF802.md) — 임직원기본정보(LDAP).
+- [TI_GRPF806](/schemas/APPADAMSUSER/tables/TI_GRPF806.md) — 부서정보(GHR+LDAP). 키: COCD, INNR_DPCD, IF_GB.
+- [TI_GRPF900](/schemas/APPADAMSUSER/tables/TI_GRPF900.md) — 회사코드(T001)(엑셀).
+- [TI_GRPF900_DAT](/schemas/APPADAMSUSER/tables/TI_GRPF900_DAT.md) — 법인정보(DART공시정보 종속회사현황)(엑셀).
+- [TI_GRPF900_MST](/schemas/APPADAMSUSER/tables/TI_GRPF900_MST.md) — 법인명(수작업매핑)(엑셀).
+- [TI_GRPF902](/schemas/APPADAMSUSER/tables/TI_GRPF902.md) — 총계정원장(결합). 키: SAKNR.
+- [TI_GRPF902_ALL](/schemas/APPADAMSUSER/tables/TI_GRPF902_ALL.md) — 총계정원장(SKAT)(엑셀).
+- [TI_GRPF903](/schemas/APPADAMSUSER/tables/TI_GRPF903.md) — 손익센터(엑셀).
+- [TI_GRPF904](/schemas/APPADAMSUSER/tables/TI_GRPF904.md) — 코스트센터(CSKS)(엑셀).
+- [TI_GRPF905](/schemas/APPADAMSUSER/tables/TI_GRPF905.md) — 코스트센터(CKST)(엑셀). 키: KOSTL, DATBI.
+- [TI_GRPF906](/schemas/APPADAMSUSER/tables/TI_GRPF906.md) — BA(TGSBT)(엑셀).
+- [TI_GRPF911](/schemas/APPADAMSUSER/tables/TI_GRPF911.md) — PLANT(엑셀). 키: PLANT.
+- [TI_GRPF912](/schemas/APPADAMSUSER/tables/TI_GRPF912.md) — 환율(TCURR)(엑셀). 키: STD_DT, FCURR, TCURR.
+- [TI_GRPF912_CONV](/schemas/APPADAMSUSER/tables/TI_GRPF912_CONV.md) — 통화 환산키(ERP에서 DB금액으로 데이타 줄 경우 환산필요)(TCURX)(엑셀).
+- [TI_GRPF913](/schemas/APPADAMSUSER/tables/TI_GRPF913.md) — MBO(마케팅 예산 조직)(엑셀). 키: MBOCD.
+- [TI_GRPF914](/schemas/APPADAMSUSER/tables/TI_GRPF914.md) — BQMS사이트코드정보.
+- [TI_GRPF916](/schemas/APPADAMSUSER/tables/TI_GRPF916.md) — Sales Org정보(엑셀).
+- [TI_GRPF917](/schemas/APPADAMSUSER/tables/TI_GRPF917.md) — Purchase Org정보(엑셀). 키: PORG.
+- [TI_GRPF918](/schemas/APPADAMSUSER/tables/TI_GRPF918.md) — Purchase Group정보(엑셀). 키: PORG, PGRP.
+- [TI_GRPF919](/schemas/APPADAMSUSER/tables/TI_GRPF919.md) — Material Group정보(엑셀).
+- [TI_GRPI002](/schemas/APPADAMSUSER/tables/TI_GRPI002.md) — Vendor Master.
+- [TI_GSCM001](/schemas/APPADAMSUSER/tables/TI_GSCM001.md) — Site(거점)마스터[sitemaster].
+- [TI_GSCM002](/schemas/APPADAMSUSER/tables/TI_GSCM002.md) — Product(제품)마스터[prodmaster].
+- [TI_HYBR002](/schemas/APPADAMSUSER/tables/TI_HYBR002.md) — eStore v2에서 제공하는 상품에 대한 정보를 저장.
+- [TI_HYBR005](/schemas/APPADAMSUSER/tables/TI_HYBR005.md) — eStore v2 서비스의 기본 상점의 부서 창고를 저장.
+- [TI_HYBR007](/schemas/APPADAMSUSER/tables/TI_HYBR007.md) — eStore v2에서 예약된 재고에 관한 정보.
+- [TI_HYBR008](/schemas/APPADAMSUSER/tables/TI_HYBR008.md) — eStore 사이트의 활성 상태에 대한 정보를 저장.
+- [TI_HYBR009](/schemas/APPADAMSUSER/tables/TI_HYBR009.md) — eStore v2 서비스의 프로모션에 관한 정보를 저장.
+- [TI_HYBR011](/schemas/APPADAMSUSER/tables/TI_HYBR011.md) — eStore v2 서비스에서 배송 모드에 대한 정보를 저장.
+- [TI_HYBR013](/schemas/APPADAMSUSER/tables/TI_HYBR013.md) — eStore v2 서비스에서 PointOfService의 변경 시간을 저장.
+- [TI_HYBR014](/schemas/APPADAMSUSER/tables/TI_HYBR014.md) — eStore v2 서비스를 위한 사용자 선호도 질문을 저장.
+- [TI_HYBR015](/schemas/APPADAMSUSER/tables/TI_HYBR015.md) — eStore v2 서비스에서 바우처에 대한 정보를 저장.
+- [TI_HYBR023](/schemas/APPADAMSUSER/tables/TI_HYBR023.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_fraud_service_filters_us_east_1_31373537_ue1.
+- [TI_HYBR026](/schemas/APPADAMSUSER/tables/TI_HYBR026.md) — estore_hybris_coupons.
+- [TI_HYBR028](/schemas/APPADAMSUSER/tables/TI_HYBR028.md) — estore_hybris_leadtime.
+- [TI_HYBR029](/schemas/APPADAMSUSER/tables/TI_HYBR029.md) — estore_hybris_logisticsdeliverymaster.
+- [TI_HYBR030](/schemas/APPADAMSUSER/tables/TI_HYBR030.md) — estore_hybris_multistoreusergroup.
+- [TI_HYBR033](/schemas/APPADAMSUSER/tables/TI_HYBR033.md) — estore_hybris_product_benefit.
+- [TI_HYBR035](/schemas/APPADAMSUSER/tables/TI_HYBR035.md) — estore_hybris_serialvouchers.
+- [TI_HYBR037](/schemas/APPADAMSUSER/tables/TI_HYBR037.md) — estore_hybris_subscriptionData.
+- [TI_MT_EXCHRATE](/schemas/APPADAMSUSER/tables/TI_MT_EXCHRATE.md) — 환율정보. 키: STD_DT, CURR_CD.
+- [TM_BQMS038_GWANLIJUJAE](/schemas/APPADAMSUSER/tables/TM_BQMS038_GWANLIJUJAE.md) — (수작업 업로드) BQMS시나리오 구성용 테이블. (마케팅 계약금액 편법 증액, 견적시 최저가 업체 미선정). CFO결재 여부확인용 법인별 관리주재원 정보. 20200414 조유진 프로를 통해 최초제공받음. 반기단위(또는 분기)로 파일로 받고 있음. 제공될 때마다 양식이 달라서 수작업으로 편집후 업로드함. 데이터 갱신여부는 아담스 마케팅 담당자에게 문의후….
+- [TN_AD_ENTP](/schemas/APPADAMSUSER/tables/TN_AD_ENTP.md) — 업체마스터(vendor+customer+cretop).
+- [TN_AD_VENDOR](/schemas/APPADAMSUSER/tables/TN_AD_VENDOR.md) — 업체(Vendor)마스터(DS에서 BQMS,G-SRM,CRETOP자료로 생성=>DX반영됨).
+- [TN_BQMS098_PRIVATE_IP](/schemas/APPADAMSUSER/tables/TN_BQMS098_PRIVATE_IP.md) — 인터넷에서 조회 가능한 사설 IP 대역 정보임. 변경이 거의 발생하지 않음. 변경사항 확인시 update-(수작업 업로드) BQMS시나리오용 사설IP대역리스트(A~D클래스). 인터넷검색에서 발췌함. 수작업 갱신 필요하나 사설IP대역이 변하지 않으므로 가끔 확인할 것.
+- [TN_BQMS099_COMPANY_IP](/schemas/APPADAMSUSER/tables/TN_BQMS099_COMPANY_IP.md) — (수작업 업로드) BQMS시나리오용 사내IP대역리스트(A~D클래스). 아담스 마케팅 담당자를 통해 갱신데이터 제공을 요청하면됨(분기 단위). 아담스 마케팅 담당자는 정보전략의 백승학 프로에게 최신데이터를 요청하는 것으로 알고 있음. 갱신요청시 현재 테이블 레이아웃대로 최신 정보를 요청하면 됨. DS에 공유하므로 INFA100에 수작업으로 갱신하고 이후 S….
+
+## code (9)
+- [TI_BQMS006_COMMCODE](/schemas/APPADAMSUSER/tables/TI_BQMS006_COMMCODE.md) — BQMS 공통코드 마스터.
+- [TI_CORES_ACTIVITY](/schemas/APPADAMSUSER/tables/TI_CORES_ACTIVITY.md) — 프로모션 ACTIVITY 마스터 정보(코드성)(결합).
+- [TI_GRPB_MD_ETC](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_ETC.md) — 제품 기타(OPTION,ACCESSORY,OTHER) 구분.
+- [TI_GRPB_MD_SN](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_SN.md) — 모델/SN번호체계.
+- [TI_GRPF908](/schemas/APPADAMSUSER/tables/TI_GRPF908.md) — DS조직구분코드(회사/법인/BA/PLANT외).
+- [TI_GRPF910](/schemas/APPADAMSUSER/tables/TI_GRPF910.md) — ERP공통코드.
+- [TI_GRPF910_GRP](/schemas/APPADAMSUSER/tables/TI_GRPF910_GRP.md) — ERP공통코드(그룹코드). 키: GRPCD.
+- [TI_GRPF920](/schemas/APPADAMSUSER/tables/TI_GRPF920.md) — 언어코드(ISO639-1/2)(엑셀).
+- [TI_GRPF_EO_NO_REASON_MASTER](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_NO_REASON_MASTER.md) — 시나리오용(BQMS NO REASON유형).
+
+## transaction (92)
+- [TI_BQMS004_INFA_BD](/schemas/APPADAMSUSER/tables/TI_BQMS004_INFA_BD.md) — 입찰집계_본사(SET). 키: SITE_CODE, REQ_NO, REQ_SEQ, ITEM_ID, EPR_CODE.
+- [TI_BQMS005_INFA_QT](/schemas/APPADAMSUSER/tables/TI_BQMS005_INFA_QT.md) — 견적집계_본사(SET). 키: SITE_CODE, REQ_NO, REQ_SEQ, ITEM_ID, EPR_CODE.
+- [TI_BQMS005_INFA_QT_2](/schemas/APPADAMSUSER/tables/TI_BQMS005_INFA_QT_2.md) — 견적집계_INFA_QT_2 (2020년 10월 18일 이후 INFA_QT 적재 테이블)에서 연계하는 테이블_본사(SET).
+- [TI_BQMS008_INFA_PO](/schemas/APPADAMSUSER/tables/TI_BQMS008_INFA_PO.md) — 발주집계_본사(SET). 키: SITE_CODE, PO_NO.
+- [TI_BQMS009_MRO_PR_PO_GR](/schemas/APPADAMSUSER/tables/TI_BQMS009_MRO_PR_PO_GR.md) — MRO입고PO PR GR. * MRO의 입고 데이터를 기준으로 PO ~ PR ~ GR 까지의 데이터를 한 ROW에 표기하여 제공하는 가공 테이블임. 키: SITE_CODE, GR_NO, ITEM_CODE, SP_CODE, PO_NO, PO_SEQ, PR_NO, PR_SEQ, IV_NO, IV_SEQ.
+- [TI_BQMS017_LOG_BD_SUBMIT](/schemas/APPADAMSUSER/tables/TI_BQMS017_LOG_BD_SUBMIT.md) — 입찰제출IP 로그 데이터. Daily 적재.
+- [TI_BQMS018_LOG_BD_RETRV](/schemas/APPADAMSUSER/tables/TI_BQMS018_LOG_BD_RETRV.md) — 입찰조회IP 로그 데이터. Daily 적재.
+- [TI_BQMS019_LOG_QT_SUBMIT](/schemas/APPADAMSUSER/tables/TI_BQMS019_LOG_QT_SUBMIT.md) — 견적제출IP 로그 데이터. Daily 적재.
+- [TI_BQMS020_LOG_QT_RETRV](/schemas/APPADAMSUSER/tables/TI_BQMS020_LOG_QT_RETRV.md) — 견적조회IP 로그 데이터. Daily 적재.
+- [TI_BQMS021_LOG_EVL_SUBMIT](/schemas/APPADAMSUSER/tables/TI_BQMS021_LOG_EVL_SUBMIT.md) — 평가제출IP 로그 데이터. Daily 적재.
+- [TI_BQMS022_LOG_EVL_RETRV](/schemas/APPADAMSUSER/tables/TI_BQMS022_LOG_EVL_RETRV.md) — 평가조회IP 로그 데이터. Daily 적재.
+- [TI_BQMS030_INFA_VENDOR_APPR](/schemas/APPADAMSUSER/tables/TI_BQMS030_INFA_VENDOR_APPR.md) — 업체별 등록품의자, 결재자 정보. (DS전용이며 SET는 해당 테이블 없음).
+- [TI_BQMS077_MRO_PE_DATA](/schemas/APPADAMSUSER/tables/TI_BQMS077_MRO_PE_DATA.md) — MRO Payment Execution.
+- [TI_BQMS078_MRO_PO_SUPPLIER](/schemas/APPADAMSUSER/tables/TI_BQMS078_MRO_PO_SUPPLIER.md) — MRO공급사.
+- [TI_BQMS810](/schemas/APPADAMSUSER/tables/TI_BQMS810.md) — 입찰및견적정보.
+- [TI_BQMS820](/schemas/APPADAMSUSER/tables/TI_BQMS820.md) — 계약내역.
+- [TI_BQMS830](/schemas/APPADAMSUSER/tables/TI_BQMS830.md) — 발주및정산내역(마케팅Only). 키: COCD, CMCD, SITE_CD, CTR_NO, EO_NO, PO_NO.
+- [TI_BQMS840](/schemas/APPADAMSUSER/tables/TI_BQMS840.md) — 입찰및견적+발주및정산정보.
+- [TI_BQMSMB001](/schemas/APPADAMSUSER/tables/TI_BQMSMB001.md) — 점검용DB 견적정보.
+- [TI_BQMSMB002](/schemas/APPADAMSUSER/tables/TI_BQMSMB002.md) — 점검용DB 입찰정보.
+- [TI_FMLY001](/schemas/APPADAMSUSER/tables/TI_FMLY001.md) — 패밀리넷 구매내역.
+- [TI_GMCS001](/schemas/APPADAMSUSER/tables/TI_GMCS001.md) — 해외 유통매장 셀아웃 실적 정보.
+- [TI_GMCS007](/schemas/APPADAMSUSER/tables/TI_GMCS007.md) — 셀아웃실적정보 [NTN_SM_SO_RESULT_INFO].
+- [TI_GRPB001](/schemas/APPADAMSUSER/tables/TI_GRPB001.md) — 견적대비할인율과다.
+- [TI_GRPB002](/schemas/APPADAMSUSER/tables/TI_GRPB002.md) — 사용자영업관련권한결과.
+- [TI_GRPB003](/schemas/APPADAMSUSER/tables/TI_GRPB003.md) — 샘플 출고내역 (FOC).
+- [TI_GRPB004B](/schemas/APPADAMSUSER/tables/TI_GRPB004B.md) — 판매주문내역(빌링).
+- [TI_GRPB004N](/schemas/APPADAMSUSER/tables/TI_GRPB004N.md) — 판매주문내역(I/F).
+- [TI_GRPB013](/schemas/APPADAMSUSER/tables/TI_GRPB013.md) — 출하반품 S/N정보.
+- [TI_GRPB015](/schemas/APPADAMSUSER/tables/TI_GRPB015.md) — 번들 패키지(유상,무상) 출하 상이.
+- [TI_GRPB017](/schemas/APPADAMSUSER/tables/TI_GRPB017.md) — 무상샘플 출고내역.
+- [TI_GRPB022](/schemas/APPADAMSUSER/tables/TI_GRPB022.md) — Customer group이 변경된 billing 내역.
+- [TI_GRPB030](/schemas/APPADAMSUSER/tables/TI_GRPB030.md) — 휴대폰주문 삼판수수료(판매수수료).
+- [TI_GRPB031](/schemas/APPADAMSUSER/tables/TI_GRPB031.md) — 휴대폰주문 삼판수수료(통신사계약).
+- [TI_GRPB_B2B_CONT](/schemas/APPADAMSUSER/tables/TI_GRPB_B2B_CONT.md) — (B2B) ERP계약정보.
+- [TI_GRPB_B2B_SFDC](/schemas/APPADAMSUSER/tables/TI_GRPB_B2B_SFDC.md) — (B2B) SFDC판매정보(Step2).
+- [TI_GRPB_DE_CONDITION](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION.md) — 매출차감-컨디션.
+- [TI_GRPB_DE_CONDITION_CHK](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_CHK.md) — 프로모션 종료 후 지급조건 변경(SSA2004004 시나리오용).
+- [TI_GRPB_DE_DEALSHEET](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_DEALSHEET.md) — 매출차감-컨디션-DealSheet.
+- [TI_GRPB_DE_PAYMENT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_PAYMENT.md) — 매출차감-정산내역(RAW데이타).
+- [TI_GRPB_DE_PAYMENT_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_PAYMENT_REPORT.md) — 매출차감-정산내역.
+- [TI_GRPB_DE_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_REPORT.md) — 매출차감-정산내역+집계+시나리오체크(결합마스터)(최종).
+- [TI_GRPB_PRICE_BILLING_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_BILLING_REPORT.md) — 판가빌링정보-최종마스터(DX한정)(디비젼한정).
+- [TI_GRPF003](/schemas/APPADAMSUSER/tables/TI_GRPF003.md) — 개인경비청구.
+- [TI_GRPF005](/schemas/APPADAMSUSER/tables/TI_GRPF005.md) — (매출차감) 계약금액 대비 큰 정산금액 내역.
+- [TI_GRPF006](/schemas/APPADAMSUSER/tables/TI_GRPF006.md) — 교통비청구정보.
+- [TI_GRPF009](/schemas/APPADAMSUSER/tables/TI_GRPF009.md) — 마케팅비용정산지연.
+- [TI_GRPF014](/schemas/APPADAMSUSER/tables/TI_GRPF014.md) — 매출 차감 선 집행 후 계약내역.
+- [TI_GRPF015](/schemas/APPADAMSUSER/tables/TI_GRPF015.md) — 여신한도변경빈발거래선.
+- [TI_GRPF019](/schemas/APPADAMSUSER/tables/TI_GRPF019.md) — 경조비지급정보.
+- [TI_GRPF028](/schemas/APPADAMSUSER/tables/TI_GRPF028.md) — 거래선특별한도정보.
+- [TI_GRPF030](/schemas/APPADAMSUSER/tables/TI_GRPF030.md) — 수작업매출차감기표.
+- [TI_GRPF039](/schemas/APPADAMSUSER/tables/TI_GRPF039.md) — 마케팅 비용 처리 내역 : 19년~.
+- [TI_GRPF039_ACC](/schemas/APPADAMSUSER/tables/TI_GRPF039_ACC.md) — 마케팅 비용 처리 내역(Accural).
+- [TI_GRPF041](/schemas/APPADAMSUSER/tables/TI_GRPF041.md) — 법인거래선별 판매내역.
+- [TI_GRPF053](/schemas/APPADAMSUSER/tables/TI_GRPF053.md) — 수작업AR(구매).
+- [TI_GRPF065](/schemas/APPADAMSUSER/tables/TI_GRPF065.md) — 매출차감 Condition Dealsheet [ZTMKCDS020].
+- [TI_GRPF066](/schemas/APPADAMSUSER/tables/TI_GRPF066.md) — 매출차감 시나리오.
+- [TI_GRPF830](/schemas/APPADAMSUSER/tables/TI_GRPF830.md) — 신용카드사용내역.
+- [TI_GRPF841](/schemas/APPADAMSUSER/tables/TI_GRPF841.md) — AP내역(업체+개인).
+- [TI_GRPF860](/schemas/APPADAMSUSER/tables/TI_GRPF860.md) — 마케팅비용처리내역(정규화).
+- [TI_GRPF_EO_ACC](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_ACC.md) — 마케팅비 충당(Accural)정보.
+- [TI_GRPF_EO_INFO](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_INFO.md) — 마케팅 비용(최초 계획 금액포함).
+- [TI_GRPF_EO_INFO_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_INFO_REPORT.md) — 마케팅 비용 리포트(ZRMK700320)(업로드).
+- [TI_GRPF_EO_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_REPORT.md) — 마케팅비(최종)(결합마스터).
+- [TI_GRPI001](/schemas/APPADAMSUSER/tables/TI_GRPI001.md) — 채권변경정보.
+- [TI_GSCM003](/schemas/APPADAMSUSER/tables/TI_GSCM003.md) — 선적 출고 실행 Confirm 이력 관리(PO Confirmation)[pop].
+- [TI_GSCM008](/schemas/APPADAMSUSER/tables/TI_GSCM008.md) — 결손(Short) 물량 및 사유 관리[shortreason].
+- [TI_HYBR018](/schemas/APPADAMSUSER/tables/TI_HYBR018.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_exchange_details_us_east_1_31373537_ue1.
+- [TI_HYBR019](/schemas/APPADAMSUSER/tables/TI_HYBR019.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_fraud_service_cases_us_east_1_31373537_ue1.
+- [TI_HYBR020](/schemas/APPADAMSUSER/tables/TI_HYBR020.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_exchange_triage_us_east_1_31373537_ue1.
+- [TI_HYBR021](/schemas/APPADAMSUSER/tables/TI_HYBR021.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_partner_order_events_us_east_1_31373537_ue1.
+- [TI_HYBR022](/schemas/APPADAMSUSER/tables/TI_HYBR022.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_fraud_service_backlog_us_east_1_31373537_ue1.
+- [TI_HYBR024](/schemas/APPADAMSUSER/tables/TI_HYBR024.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_fraud_service_orders_us_east_1_31373537_ue1.
+- [TI_HYBR025](/schemas/APPADAMSUSER/tables/TI_HYBR025.md) — 285-data-catalog_hybris-msa-bdc_hybris_msa_bdc_order_line_item_notifications_us_east_1_31373537_ue1.
+- [TI_HYBR032](/schemas/APPADAMSUSER/tables/TI_HYBR032.md) — estore_hybris_csat_exception.
+- [TI_HYBR034](/schemas/APPADAMSUSER/tables/TI_HYBR034.md) — estore_hybris_fraud_report.
+- [TI_HYBR036](/schemas/APPADAMSUSER/tables/TI_HYBR036.md) — estore_hybris_skuswaprecord.
+- [TI_KDPT001](/schemas/APPADAMSUSER/tables/TI_KDPT001.md) — 클레임 [claim_base].
+- [TI_KDPT003](/schemas/APPADAMSUSER/tables/TI_KDPT003.md) — 회원적립금 [member_saved_money].
+- [TI_KDPT005](/schemas/APPADAMSUSER/tables/TI_KDPT005.md) — 주문정보 [order_base].
+- [TI_KDPT008](/schemas/APPADAMSUSER/tables/TI_KDPT008.md) — 결제정보 [pay_base].
+- [TM_BQMS036_CTR_CHANGE_APPROVAL](/schemas/APPADAMSUSER/tables/TM_BQMS036_CTR_CHANGE_APPROVAL.md) — 결재 변경-(수작업 업로드) BQMS시나리오 구성용 테이블. (마케팅 계약금액 편법 증액) 3단계. 계약변경결재정보. 마케팅, 글로벌마케팅 부문만 해당. 데이터는 2019년 1월 견적,입찰건부터 보유함. VOC 등록하여 제공받음.
+- [TR_SBQ00](/schemas/APPADAMSUSER/tables/TR_SBQ00.md) — 시나리오 추출내역(BQMS).
+- [TR_SDE1405002_01](/schemas/APPADAMSUSER/tables/TR_SDE1405002_01.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE1405002_02](/schemas/APPADAMSUSER/tables/TR_SDE1405002_02.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE1405002_03](/schemas/APPADAMSUSER/tables/TR_SDE1405002_03.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE1604004_02](/schemas/APPADAMSUSER/tables/TR_SDE1604004_02.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE2004002_02](/schemas/APPADAMSUSER/tables/TR_SDE2004002_02.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE2004002_03](/schemas/APPADAMSUSER/tables/TR_SDE2004002_03.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE2004002_04](/schemas/APPADAMSUSER/tables/TR_SDE2004002_04.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SSA00](/schemas/APPADAMSUSER/tables/TR_SSA00.md) — 시나리오 추출내역(영업/마케팅).
+
+## detail (31)
+- [TI_BQMS011_BD_EVL](/schemas/APPADAMSUSER/tables/TI_BQMS011_BD_EVL.md) — BQMS 입찰평가집계, 입찰평가집계_레이아웃변경하여 재연계_191002.
+- [TI_BQMS012_APPROVAL_QT](/schemas/APPADAMSUSER/tables/TI_BQMS012_APPROVAL_QT.md) — 견적결재선집계_본사(SET). 키: SITE_CODE, GUB, REQ_NO, ID, APPROVAL_STATUS_TYPE_CODE, SEQ.
+- [TI_BQMS013_APPROVAL_BD](/schemas/APPADAMSUSER/tables/TI_BQMS013_APPROVAL_BD.md) — 입찰결재선집계_본사(SET). 키: SITE_CODE, GUB, REQ_NO, ID, APPROVAL_STATUS_TYPE_CODE, SEQ.
+- [TI_BQMS031_BD_EVL_DTL](/schemas/APPADAMSUSER/tables/TI_BQMS031_BD_EVL_DTL.md) — 입찰평가상세(평가자별)_평가자별평가정보_20191002신규연계.
+- [TI_BQMS032_INFA_QT_RESULT](/schemas/APPADAMSUSER/tables/TI_BQMS032_INFA_QT_RESULT.md) — 계약정보-입찰집계_업체선정사유 TEXT데이터 연계 테이블_본사(SET).
+- [TI_BQMS045_INFA_QT_UI](/schemas/APPADAMSUSER/tables/TI_BQMS045_INFA_QT_UI.md) — 견적정보-BQMS 차수별 요청업체, 제출업체의 제출현황 및 제출정보 RAW DATA. 신규연계 20201224. 2018년 데이터부터 보유.
+- [TI_BQMS045_INFA_QT_UI_BASE](/schemas/APPADAMSUSER/tables/TI_BQMS045_INFA_QT_UI_BASE.md) — BQMS 차수별 요청업체, 제출업체의 제출현황 및 제출정보 RAW DATA. 신규연계 20201224. 2018년 데이터부터 보유.
+- [TI_BQMS_GR_CLSG_ARTICLE](/schemas/APPADAMSUSER/tables/TI_BQMS_GR_CLSG_ARTICLE.md) — 정산 마감항목 신규 IF 20260923. 키: CLSG_NO, CLSG_SEQ.
+- [TI_BQMS_MD_IV_EVIDENCE_ATTA](/schemas/APPADAMSUSER/tables/TI_BQMS_MD_IV_EVIDENCE_ATTA.md) — 글로벌마케팅 정산요청 첨부파일 신규 IF 20260723. 키: CLSG_NO, EV_KEY.
+- [TI_BQMS_MKT_PP_ACTIVITY_MONTHLY](/schemas/APPADAMSUSER/tables/TI_BQMS_MKT_PP_ACTIVITY_MONTHLY.md) — NERP PP 월배분 정보 수신 신규 IF 20260723. 키: PROPOSAL_ID, PROPOSAL_ITEM_NO, ACT_ITEM_NO, YEAR_A, MONTH_A.
+- [TI_GMCS002](/schemas/APPADAMSUSER/tables/TI_GMCS002.md) — 첨부파일 정보.
+- [TI_GMCS004](/schemas/APPADAMSUSER/tables/TI_GMCS004.md) — 프로모션제품할당 [NTN_PM_PRMT_PROD_ASN].
+- [TI_GMCS005](/schemas/APPADAMSUSER/tables/TI_GMCS005.md) — 프로모션매장할당 [NTN_PM_PRMT_SITE_ASN].
+- [TI_GRPB_DE_CONDITION_ITEM](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_ITEM.md) — 매출차감-컨디션-아이템.
+- [TI_GRPB_DE_CONDITION_TARGET](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_TARGET.md) — 매출차감-컨디션 Target Range(업로드).
+- [TI_GRPB_DE_CONDITION_TCOST](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_TCOST.md) — 매출차감-컨디션 단가(계산).
+- [TI_GRPB_DE_CONDITION_TPAMT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_TPAMT.md) — 매출차감-컨디션 충당금액, TCMS 번호(업로드).
+- [TI_GRPB_DE_CONDITION_TSAMT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_TSAMT.md) — 매출차감-컨디션(TOB) Total Sales 금액(업로드).
+- [TI_GRPB_DE_SELLOUT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_SELLOUT.md) — 셀아웃 검증 정산 내역(업로드).
+- [TI_GRPB_PRICE_CONDITION](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_CONDITION.md) — 판가 Condition(헤더+아이템)(15년~23년)(결합).
+- [TI_GRPB_PRICE_ITEM](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_ITEM.md) — 판가 Item 정보 : 15년~23년12월.
+- [TI_GRPF061](/schemas/APPADAMSUSER/tables/TI_GRPF061.md) — 매출차감 Payment Item.
+- [TI_GRPF062](/schemas/APPADAMSUSER/tables/TI_GRPF062.md) — 매출차감 Payment Activity.
+- [TI_GRPF064](/schemas/APPADAMSUSER/tables/TI_GRPF064.md) — 매출차감 Condition Item [ZTMKC00053].
+- [TI_GRPF067](/schemas/APPADAMSUSER/tables/TI_GRPF067.md) — 매출차감 Condition Target Information.
+- [TI_GRPF068](/schemas/APPADAMSUSER/tables/TI_GRPF068.md) — 매출차감 Condition Exception Model.
+- [TI_HYBR006](/schemas/APPADAMSUSER/tables/TI_HYBR006.md) — view 설정 정보.
+- [TI_HYBR031](/schemas/APPADAMSUSER/tables/TI_HYBR031.md) — estore_hybris_orderpromotionInfolog.
+- [TI_KDPT002](/schemas/APPADAMSUSER/tables/TI_KDPT002.md) — 클레임정산세부내역 [claim_detail].
+- [TI_KDPT004](/schemas/APPADAMSUSER/tables/TI_KDPT004.md) — 회원적립금 내역 [member_saved_money_detail].
+- [TI_KDPT006](/schemas/APPADAMSUSER/tables/TI_KDPT006.md) — 주문상세정보 [order_detail].
+
+## history (4)
+- [TI_BQMS003_SYS_USE_MST_HISTORY](/schemas/APPADAMSUSER/tables/TI_BQMS003_SYS_USE_MST_HISTORY.md) — BQMS 사용자마스터 히스토리테이블.
+- [TI_BQMS026_INFA_CTRT_H](/schemas/APPADAMSUSER/tables/TI_BQMS026_INFA_CTRT_H.md) — 계약마스터_본사(SET)_히스토리.
+- [TI_GRPB811](/schemas/APPADAMSUSER/tables/TI_GRPB811.md) — 거래선이름(히스토리).
+- [TI_GRPF806H](/schemas/APPADAMSUSER/tables/TI_GRPF806H.md) — 부서정보(GHR+LDAP) 히스토리. 키: EXT_GB, COCD, INNR_DPCD, IF_GB.
+
+## mapping (24)
+- [TI_BQMS007_USER_ROLE](/schemas/APPADAMSUSER/tables/TI_BQMS007_USER_ROLE.md) — 사내사용자권한마스타.
+- [TI_BQMS014_CATEGORY_VENDOR](/schemas/APPADAMSUSER/tables/TI_BQMS014_CATEGORY_VENDOR.md) — 카테고리벤더마스타.
+- [TI_BQMS016_USER_SITE](/schemas/APPADAMSUSER/tables/TI_BQMS016_USER_SITE.md) — 사내사용자SITE마스타. 사용자별 권한있는 사이트 현황 정보.
+- [TI_BQMS802](/schemas/APPADAMSUSER/tables/TI_BQMS802.md) — BQMS ID/PW매핑정보.
+- [TI_BQMS_MKT_PP_PR_MAP](/schemas/APPADAMSUSER/tables/TI_BQMS_MKT_PP_PR_MAP.md) — 수신된 PP에 따라서 PR 번호 생성 신규 IF 20260923. 키: PROPOSAL_ID, PROPOSAL_ITEM_NO, ACT_ITEM_NO.
+- [TI_GRPB004B_MAP](/schemas/APPADAMSUSER/tables/TI_GRPB004B_MAP.md) — 판매주문내역(매핑).
+- [TI_GRPB_CUSTOMER_GROUP](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_GROUP.md) — CUSTOER GROUP 마스터(결합) : from TI_GRPI011.
+- [TI_GRPB_CUSTOMER_PAYER](/schemas/APPADAMSUSER/tables/TI_GRPB_CUSTOMER_PAYER.md) — Customer vs Payer 마스터_업로드 : from TI_GRPI010.
+- [TI_GRPB_DE_CONDITION_CHANGE](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_CHANGE.md) — 매출차감-컨디션 프로모션 종료후 변경여부(Report용).
+- [TI_GRPB_DE_CONDITION_TCMS](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_TCMS.md) — 매출차감-컨디션(TCMS)(CORES).
+- [TI_GRPB_DE_SCN](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_SCN.md) — 시나리오 추출결과(매출차감B지원마스터용).
+- [TI_GRPB_MD_MODEL_NM](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_MODEL_NM.md) — 모델/마케팅명(MX:G1,C3).
+- [TI_GRPB_MD_MODEL_PRODH](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_MODEL_PRODH.md) — Material Hierarchy(제품계층).
+- [TI_GRPF900_SCM](/schemas/APPADAMSUSER/tables/TI_GRPF900_SCM.md) — 회사코드(GSCM)(엑셀).
+- [TI_GRPF901](/schemas/APPADAMSUSER/tables/TI_GRPF901.md) — 법인코드매핑(GERP vs GHR).
+- [TI_GRPF904_MAP](/schemas/APPADAMSUSER/tables/TI_GRPF904_MAP.md) — 코스트센터 KNOX매핑(수작업).
+- [TI_GRPF907](/schemas/APPADAMSUSER/tables/TI_GRPF907.md) — 사업부BA매핑(엑셀).
+- [TI_GRPF907_MAP](/schemas/APPADAMSUSER/tables/TI_GRPF907_MAP.md) — 사업부BA매핑(엑셀)-헤더용.
+- [TI_GRPF_EO_NO_REASON](/schemas/APPADAMSUSER/tables/TI_GRPF_EO_NO_REASON.md) — 시나리오용(BQMS NO REASON유형).
+- [TI_GRPI010](/schemas/APPADAMSUSER/tables/TI_GRPI010.md) — Customer Payer : 동일거래선 다른 코드 사용.
+- [TI_GRPI011](/schemas/APPADAMSUSER/tables/TI_GRPI011.md) — Customer Group Master.
+- [TI_GSCM011](/schemas/APPADAMSUSER/tables/TI_GSCM011.md) — 채널Site매핑현황[channelsite].
+- [TI_HYBR004](/schemas/APPADAMSUSER/tables/TI_HYBR004.md) — 각 Order 상태에 대하여 실 주문건으로 체크할 것인지 여부.
+- [TM_BQMS_VENDOR_BZNS_NO](/schemas/APPADAMSUSER/tables/TM_BQMS_VENDOR_BZNS_NO.md) — 업체ERP코드-BQMS시나리오 구성용 테이블. 업체코드로 사업자번호 매핑을 위한 테이블. 뷰로 구성시 속도저하로 인해 테.
+
+## summary (39)
+- [TI_GMCS006](/schemas/APPADAMSUSER/tables/TI_GMCS006.md) — 품목일별집계보고 [NTN_AL_TOTAL_PG_DALY_RPT].
+- [TI_GMCS008](/schemas/APPADAMSUSER/tables/TI_GMCS008.md) — 재고실적정보 [NTN_SM_INV_RESULT_INFO].
+- [TI_GRPB004B_GRP](/schemas/APPADAMSUSER/tables/TI_GRPB004B_GRP.md) — 판매주문내역(빌링집계).
+- [TI_GRPB010](/schemas/APPADAMSUSER/tables/TI_GRPB010.md) — 법인별제품별반품추이.
+- [TI_GRPB812](/schemas/APPADAMSUSER/tables/TI_GRPB812.md) — 거래선월별거래실적.
+- [TI_GRPB813](/schemas/APPADAMSUSER/tables/TI_GRPB813.md) — 거래선연도별거래실적.
+- [TI_GRPB_B2B_SFDC_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPB_B2B_SFDC_REPORT.md) — (B2B) SFDC판매정보(Step4)+계약+빌링정보(결합).
+- [TI_GRPB_B2B_SFDC_RPT](/schemas/APPADAMSUSER/tables/TI_GRPB_B2B_SFDC_RPT.md) — (B2B) SFDC판매정보(Step3)(할인계산).
+- [TI_GRPB_DE_CONDITION_AMT](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_CONDITION_AMT.md) — 매출차감-컨디션 금액 및 체크(Report용). 키: CONDITION_NO.
+- [TI_GRPB_DE_MKT_VENDOR_YM](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_MKT_VENDOR_YM.md) — 마케팅 비용 처리 벤더 집계(법인/월별).
+- [TI_GRPB_DE_REPORT_GRP](/schemas/APPADAMSUSER/tables/TI_GRPB_DE_REPORT_GRP.md) — 매출차감 집계(거래선/타입별/월별 건수/금액 집계).
+- [TI_GRPB_INC_REPORT](/schemas/APPADAMSUSER/tables/TI_GRPB_INC_REPORT.md) — 셀인셀아웃인센티브(점검결과 전체).
+- [TI_GRPB_MD_PRICE](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_PRICE.md) — 제품판가정보(모델/거래선/법인별).
+- [TI_GRPB_MD_PRICE_MODEL](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_PRICE_MODEL.md) — 제품판가정보(모델별).
+- [TI_GRPB_MD_PRICE_MODEL_CM](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_PRICE_MODEL_CM.md) — 제품판가정보(모델/법인별).
+- [TI_GRPB_MD_PRICE_VALUATION](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_PRICE_VALUATION.md) — 제품판가정보(법인,Valuation Type기준).
+- [TI_GRPB_MD_SALES](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_SALES.md) — 제품매출금액(모델/거래선/법인별).
+- [TI_GRPB_MD_SALES_MODEL](/schemas/APPADAMSUSER/tables/TI_GRPB_MD_SALES_MODEL.md) — 제품매출금액(모델/법인별/월별).
+- [TI_GRPB_PRICE_BILLING_AVG1](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_BILLING_AVG1.md) — 판가(YN01기준 USD평균판가).
+- [TI_GRPB_PRICE_BILLING_AVG2](/schemas/APPADAMSUSER/tables/TI_GRPB_PRICE_BILLING_AVG2.md) — 판가(YN01기준 통화별 평균판가).
+- [TI_GRPF029](/schemas/APPADAMSUSER/tables/TI_GRPF029.md) — 거래선 별 매출차감 추이.
+- [TI_GRPF032](/schemas/APPADAMSUSER/tables/TI_GRPF032.md) — 법인/거래선/제품군 별 마진 추이.
+- [TI_GRPF033](/schemas/APPADAMSUSER/tables/TI_GRPF033.md) — 법인거래선마케팅비추이.
+- [TI_GRPF035](/schemas/APPADAMSUSER/tables/TI_GRPF035.md) — 거래선거래규모(매출).
+- [TI_GRPF069](/schemas/APPADAMSUSER/tables/TI_GRPF069.md) — 매출차감 Condition Sales Amount.
+- [TI_GRPF861](/schemas/APPADAMSUSER/tables/TI_GRPF861.md) — 마케팅비용처리내역(EO기준합계금액). 키: CMCD, MBOCD, EONUM, EOITEMNO.
+- [TI_GRPF906_TERM](/schemas/APPADAMSUSER/tables/TI_GRPF906_TERM.md) — BA AP기간.
+- [TI_GSCM004](/schemas/APPADAMSUSER/tables/TI_GSCM004.md) — 판매계획(목표) 관리(Sales Plan)[sales_plan].
+- [TI_GSCM005](/schemas/APPADAMSUSER/tables/TI_GSCM005.md) — 판매실적 관리(Sales Plan 실적)[sales_plan_result].
+- [TI_GSCM006](/schemas/APPADAMSUSER/tables/TI_GSCM006.md) — 셀아웃(판매출고) 주단위 계획 수요(Sell out Forecast)[sofcst].
+- [TI_GSCM007](/schemas/APPADAMSUSER/tables/TI_GSCM007.md) — 셀아웃(판매출고) 주단위 실적[soresult].
+- [TI_GSCM009](/schemas/APPADAMSUSER/tables/TI_GSCM009.md) — 거점/품목별 장기재고 물량 통계(Inventory Aging)[inv_aging].
+- [TI_GSCM010](/schemas/APPADAMSUSER/tables/TI_GSCM010.md) — 일자별 제품별/SaleID별 재고부족현황(Stock-out reason and action item)[stockoutinfo].
+- [TI_HYBR017](/schemas/APPADAMSUSER/tables/TI_HYBR017.md) — 직접 소비자 계정의 등록 및 활동 지표를 포함.
+- [TI_HYBR027](/schemas/APPADAMSUSER/tables/TI_HYBR027.md) — estore_hybris_forecasted_stock_level.
+- [TI_MT_EXCHRATE_YM](/schemas/APPADAMSUSER/tables/TI_MT_EXCHRATE_YM.md) — 환율정보(월평균환율).
+- [TI_MT_EXCHRATE_YW](/schemas/APPADAMSUSER/tables/TI_MT_EXCHRATE_YW.md) — 환율정보(주평균환율).
+- [TR_SDE1604004_01](/schemas/APPADAMSUSER/tables/TR_SDE1604004_01.md) — 개발 BQMS시나리오 개발중 미사용.
+- [TR_SDE2004002_01](/schemas/APPADAMSUSER/tables/TR_SDE2004002_01.md) — 개발 BQMS시나리오 개발중 미사용.
+
+## interface (9)
+- [TI_BQMS009_MROMALL_IF](/schemas/APPADAMSUSER/tables/TI_BQMS009_MROMALL_IF.md) — MRO입고PO PR GR I/F테이블_MROMALL용.
+- [TI_BQMS009_MRO_PR_PO_GR_IF](/schemas/APPADAMSUSER/tables/TI_BQMS009_MRO_PR_PO_GR_IF.md) — MRO입고PO PR GR 본사용.
+- [TI_BQMS033_INFA_QT_MASTER_RAW](/schemas/APPADAMSUSER/tables/TI_BQMS033_INFA_QT_MASTER_RAW.md) — 견적정보-(수작업 업로드) BQMS 견적집계의 RAW DATA성격 테이블. 제출업체기준이 아닌 요청기준으로 요청여부와 제출여부 확인용 테이블. 시나리오구성에 사용되며 2020.03 B,C 시나리오점검시 처음으로 엑셀파일로 받은 후 이후 계속 수작업 업로드 중. 데이터는 2018년 7월 견적건부터 보유함. VOC 등록하여 제공받음.
+- [TI_BQMS034_INFA_BD_MASTER_RAW](/schemas/APPADAMSUSER/tables/TI_BQMS034_INFA_BD_MASTER_RAW.md) — 견적정보-(수작업 업로드) BQMS 입찰집계의 RAW DATA성격 테이블. 제출업체기준이 아닌 요청기준으로 요청여부와 제출여부 확인용 테이블. 시나리오구성에 사용되며 2020.03 B,C 시나리오점검시 처음으로 엑셀파일로 받은 후 이후 계속 수작업 업로드 중. 데이터는 2018년 7월 입찰건부터 보유함. VOC 등록하여 제공받음.
+- [TI_CIST001_ERP](/schemas/APPADAMSUSER/tables/TI_CIST001_ERP.md) — ERP 거래선명(추가대상).
+- [TM_BQMS035_PREDICT_NOTICE](/schemas/APPADAMSUSER/tables/TM_BQMS035_PREDICT_NOTICE.md) — PREDICT_NOTICE-(수작업 업로드) BQMS시나리오 구성용 테이블. (단수견적으로 특정 마케팅업체 물량 몰아주기) 3단계. 목표가공지여부. 마케팅, 글로벌마케팅 부문만 해당. 데이터는 2019년 1월 견적,입찰건부터 보유함. VOC 등록하여 제공받음.
+- [TM_BQMS039_SVC_CTR_LEVEL_YN](/schemas/APPADAMSUSER/tables/TM_BQMS039_SVC_CTR_LEVEL_YN.md) — CTR_NO-(수작업 업로드) BQMS시나리오 구성용 테이블. 법무검토진행여부. 대부분의 시나리오에서 참고항목으로 제공하는 컬럼임. 데이터는 2019년 1월 견적,입찰건부터 보유함. VOC 등록하여 제공받음.
+- [TM_BQMS040_ACTIVITY_OWNER](/schemas/APPADAMSUSER/tables/TM_BQMS040_ACTIVITY_OWNER.md) — ACT_OWNER_EPID-(수작업 업로드) BQMS시나리오 추출데이터 조회에 추가 컬럼구성용 테이블. 글로벌마케팅 영역에서만 사용하는 ACTIVITY OWNER(구매의뢰요청자). 최초업로드 20200612. * 상태 조건 : 입찰 - 낙찰/ 견적 - 선정완료 건에 대해서만 발췌. * E-Catalog 관련 건은 견적의 경우만 가능(입찰은 해당 사항 없음….
+- [TM_BQMS041_PR_REQ_DATE](/schemas/APPADAMSUSER/tables/TM_BQMS041_PR_REQ_DATE.md) — PR_REQ_DATE-(수작업 업로드) BQMS시나리오 추출데이터 조회에 추가 컬럼구성용 테이블. BQMS 의뢰일 데이터. 데이터는 전체기간 견적,입찰건 보유함. VOC 등록하여 제공받음.
+
+## view (1)
+- [VW_BQMS_SAMSUNG_COMPANY](/schemas/APPADAMSUSER/views/VW_BQMS_SAMSUNG_COMPANY.md) — BQMS 업체코드(관계사). 참조: TI_BQMS024_INFA_VENDOR.
