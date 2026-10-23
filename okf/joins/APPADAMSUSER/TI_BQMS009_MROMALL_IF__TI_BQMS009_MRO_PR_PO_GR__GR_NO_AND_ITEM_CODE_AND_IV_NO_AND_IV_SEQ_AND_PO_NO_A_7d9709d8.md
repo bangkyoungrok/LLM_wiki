@@ -1,0 +1,51 @@
+---
+type: Join Relationship
+title: MRO입고PO PR GR I/F테이블_MROMALL용 → MRO입고PO PR GR. * MRO의 입고 데이터를 기준으로 PO ~ PR ~ GR 까지의 데이터를 한 ROW에 표기하여 제공하는 가공 테이…
+description: TI_BQMS009_MROMALL_IF.GR_NO,ITEM_CODE,IV_NO,IV_SEQ,PO_NO,PO_SEQ,PR_NO,PR_SEQ,SITE_CODE,SP_CODE → TI_BQMS009_MRO_PR_PO_GR.GR_NO,ITEM_CODE,IV_NO,IV_SEQ,PO_NO,PO_SEQ,PR_NO,PR_SEQ,SITE_CODE,SP_CODE (1:1, 신뢰도 medium).
+tags: ['join:index-inferred', 'card:1-1', 'conf:medium']
+from: /schemas/APPADAMSUSER/tables/TI_BQMS009_MROMALL_IF.md
+to: /schemas/APPADAMSUSER/tables/TI_BQMS009_MRO_PR_PO_GR.md
+from_columns: [GR_NO, ITEM_CODE, IV_NO, IV_SEQ, PO_NO, PO_SEQ, PR_NO, PR_SEQ, SITE_CODE, SP_CODE]
+to_columns: [GR_NO, ITEM_CODE, IV_NO, IV_SEQ, PO_NO, PO_SEQ, PR_NO, PR_SEQ, SITE_CODE, SP_CODE]
+cardinality: '1:1'
+usable: true
+join_condition: TI_BQMS009_MROMALL_IF.GR_NO = TI_BQMS009_MRO_PR_PO_GR.GR_NO AND TI_BQMS009_MROMALL_IF.ITEM_CODE = TI_BQMS009_MRO_PR_PO_GR.ITEM_CODE AND TI_BQMS009_MROMALL_IF.IV_NO = TI_BQMS009_MRO_PR_PO_GR.IV_NO AND TI_BQMS009_MROMALL_IF.IV_SEQ = TI_BQMS009_MRO_PR_PO_GR.IV_SEQ AND TI_BQMS009_MROMALL_IF.PO_NO = TI_BQMS009_MRO_PR_PO_GR.PO_NO AND TI_BQMS009_MROMALL_IF.PO_SEQ = TI_BQMS009_MRO_PR_PO_GR.PO_SEQ AND TI_BQMS009_MROMALL_IF.PR_NO = TI_BQMS009_MRO_PR_PO_GR.PR_NO AND TI_BQMS009_MROMALL_IF.PR_SEQ = TI_BQMS009_MRO_PR_PO_GR.PR_SEQ AND TI_BQMS009_MROMALL_IF.SITE_CODE = TI_BQMS009_MRO_PR_PO_GR.SITE_CODE AND TI_BQMS009_MROMALL_IF.SP_CODE = TI_BQMS009_MRO_PR_PO_GR.SP_CODE
+join_type_hint: LEFT
+join_filter: null
+cartesian_risk: none
+parent_unique: constraint
+match_ratio: 1.0
+fanout:
+  avg: 1.0
+  p99: 1
+  max: 1
+  basis: exact
+evidence: index_name_match
+status: draft
+stale_after: 2027-01-11T13:53:08+09:00
+sources:
+- id: verification
+  resource: /references/join-verification.md
+  title: 조인 실측 요약
+generated:
+  by: process:okf-join-builder/0.1
+  at: 2026-10-13T13:53:08+09:00
+---
+
+# 조인 조건
+<!-- AUTO:BEGIN condition -->
+```sql
+TI_BQMS009_MROMALL_IF.GR_NO = TI_BQMS009_MRO_PR_PO_GR.GR_NO AND TI_BQMS009_MROMALL_IF.ITEM_CODE = TI_BQMS009_MRO_PR_PO_GR.ITEM_CODE AND TI_BQMS009_MROMALL_IF.IV_NO = TI_BQMS009_MRO_PR_PO_GR.IV_NO AND TI_BQMS009_MROMALL_IF.IV_SEQ = TI_BQMS009_MRO_PR_PO_GR.IV_SEQ AND TI_BQMS009_MROMALL_IF.PO_NO = TI_BQMS009_MRO_PR_PO_GR.PO_NO AND TI_BQMS009_MROMALL_IF.PO_SEQ = TI_BQMS009_MRO_PR_PO_GR.PO_SEQ AND TI_BQMS009_MROMALL_IF.PR_NO = TI_BQMS009_MRO_PR_PO_GR.PR_NO AND TI_BQMS009_MROMALL_IF.PR_SEQ = TI_BQMS009_MRO_PR_PO_GR.PR_SEQ AND TI_BQMS009_MROMALL_IF.SITE_CODE = TI_BQMS009_MRO_PR_PO_GR.SITE_CODE AND TI_BQMS009_MROMALL_IF.SP_CODE = TI_BQMS009_MRO_PR_PO_GR.SP_CODE
+```
+<!-- AUTO:END condition -->
+
+# 근거
+<!-- AUTO:BEGIN evidence -->
+- 근거: 유니크 키와 컬럼 이름·타입 일치 (name:pk-composite)
+- 선언된 PK/UK/유니크 인덱스로 부모 키가 유일하다
+- 자식 키가 있는 행 100375건(표본 4.363322%) 중 100.0% 가 부모에 존재
+- 부모 1건당 자식: 평균 1.0, 최대 1 (exact)
+<!-- AUTO:END evidence -->
+
+# T2S 사용 주의
+(사람이 보완: 예) 부모 테이블은 `DEL_YN = 'N'` 조건과 함께 쓴다)
