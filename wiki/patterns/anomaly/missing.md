@@ -1,0 +1,80 @@
+---
+type: pattern-group
+id: anomaly-missing
+status: 자동 생성
+source: patterns_73_2.json (데이터 이상징후 패턴 P-05 누락·부재, P-123 ~ P-126)
+updated_at: 2026-10-22
+---
+# 데이터 이상징후 패턴: 누락·부재 (P-123 ~ P-126)
+
+있어야 할 값·상대 기록이 없거나 취소된 건에 금액이 남은 신호이다. 원본 패턴 정의(설명, 수법, 탐지 방법, COSO, 원본 질의 골격)와 Bottom-up 에서 쓰는 법(수준, 탐지 수단, 점검 질의 열 조건, OKF 에서 찾는 곳, 자주 묶이는 패턴)을 패턴마다 함께 적었다. 조합 규칙은 `wiki/patterns/index.md` 4절이다.
+
+## P-123 필수 필드 NULL
+
+- 설명: 필수 입력 필드가 NULL 또는 비어있는 경우. 예를 들어 거래 계약서에 거래 내용 내용이 비어있거나, 결제 기록에 금액이 누락된 경우 탐지
+- 기법 분류: P-05 누락·부재
+- ACFE: N/A (기술적 탐지 패턴)
+- COSO: CA-03-01 승인 통제, CA-03-02 검증·조정
+- SQL 대입: 가능
+- 원본 질의 골격:
+  - SQL: `WHERE required_col IS NULL`
+  - SPARQL(참고, 이 환경에는 KG 가 없다): `?s a dpsc:DealSheet . OPTIONAL { ?s dpsp:tcContent ?tc } . FILTER(!BOUND(?tc))`
+- 수법: 핵심 비즈니스 필드 누락 / 참조 필드 누락 / 검증 필드 누락
+- 탐지 방법: 필수 필드 NOT NULL 제약 조건 / NULL 필드 발생 건수 모니터링 / 누락 필드 보정 프로세스
+- 쓰는 법:
+  - 수준: 행
+  - 탐지 수단: 이상징후 점검 질의 열 `R_P123`
+  - 점검 질의 열 조건: `CASE WHEN <업무상 필수 컬럼> IS NULL THEN 1 ELSE 0 END` (「현재 데이터는 모두 NULL」인 컬럼은 쓰지 않는다)
+  - 찾는 곳(OKF): 업무상 필수인데 NULL 인 컬럼(Schema 의 NULL 열이 Y 라도 T2S 힌트나 업무 흐름상 필수). 「현재 데이터는 모두 NULL」인 컬럼은 대상이 아니다.
+  - 자주 묶이는 패턴: P-129 분포 편차, P-104 참조 무결성 위반
+
+## P-124 검증 로그 부재
+
+- 설명: 검증이 필수인 거래나 청구에 대해 검증 로그가 기록되지 않은 경우. 예를 들어 고가 승인에 대한 검증 기록이 없거나, 자동 검증 통과 로그가 누락된 경우 탐지
+- 기법 분류: P-05 누락·부재
+- ACFE: N/A (기술적 탐지 패턴)
+- COSO: CA-03-02 검증·조정, CA-03-06 독립 검토
+- SQL 대입: 가능
+- 원본 질의 골격:
+  - SQL: `LEFT JOIN audit WHERE id IS NULL`
+  - SPARQL(참고, 이 환경에는 KG 가 없다): `?e a dpsc:ExpenseClaim . OPTIONAL { ?e dpsp:hasEvidenceCheck ?ec } . FILTER(!BOUND(?ec))`
+- 수법: 고가 거래 검증 로그 누락 / 수동 검증 기록 부재 / 자동 검증 시스템 로그 누락
+- 탐지 방법: 검증 필수 항목과 검증 로그 매칭 / LEFT JOIN을 통한 누락 검증 식별 / 검증 누락 빈도 모니터링
+- 쓰는 법:
+  - 수준: 흐름
+  - 탐지 수단: `match_tables` 짝 없음(대상이 결재·검수·로그 기록일 때)
+  - 찾는 곳(OKF): 결재·검수 기록이 있어야 하는 건(BQMS 결재 테이블, 검수요청 `TI_BQMS_IEN_REQ`)과의 짝 없음.
+  - 자주 묶이는 패턴: P-105 절대 임계 초과, P-130 집중도 이상
+
+## P-125 증빙 파일 부재
+
+- **이 환경에서 쓰지 않음**: 첨부 테이블이 AIAGT 접근 범위 밖이다. 가설에 넣지 않는다.
+- 설명: 증빙 파일이 첨부되어야 하는 이벤트나 거래에 대해 파일이 누락된 경우. 예를 들어 마케팅 이벤트에 증거 사진이 없거나, 비용 청구에 영수증 이미지가 누락된 경우 탐지
+- 기법 분류: P-05 누락·부재
+- ACFE: N/A (기술적 탐지 패턴)
+- COSO: CA-03-01 승인 통제, CA-03-02 검증·조정
+- SQL 대입: 가능
+- 원본 질의 골격:
+  - SQL: `WHERE attachment IS NULL`
+  - SPARQL(참고, 이 환경에는 KG 가 없다): `?e a dpsc:MarketingEvent . OPTIONAL { ?e dpsp:hasEvidenceDocument ?doc } . FILTER(!BOUND(?doc))`
+- 수법: 증거 사진 누락 / 영수증 이미지 누락 / 계약서 첨부 누락
+- 탐지 방법: 증빙 필수 항목과 파일 첨부 매칭 / 파일 첨부 여부 자동 검증 / 증빙 누락 건수 및 패턴 분석
+
+## P-126 역조건 존재
+
+- 설명: 취소된 거래인데도 금액이 양수인 등 역조건이 성립하는 경우. 예를 들어 Return PO가 취소되었지만 금액이 0이 아닌 경우 탐지
+- 기법 분류: P-05 누락·부재
+- ACFE: N/A (기술적 탐지 패턴)
+- COSO: CA-03-02 검증·조정
+- SQL 대입: 가능
+- 원본 질의 골격:
+  - SQL: `WHERE cancel='Y' AND amount > 0`
+  - SPARQL(참고, 이 환경에는 KG 가 없다): `?s a dpsc:ReturnPO . ?s dpsp:cancelFlag ?f . ?s dpsp:amount ?amt . FILTER(?f = 'Y' && ?amt > 0)`
+- 수법: 취소된 거래의 양수 금액 / 환불된 거래의 미반환 상태 / 종료된 계약의 활성 상태
+- 탐지 방법: 상태-값 조합 검증 / 역조건 발생 건수 모니터링 / 역조건 원인 분석 및 수정
+- 쓰는 법:
+  - 수준: 행
+  - 탐지 수단: 이상징후 점검 질의 열 `R_P126`
+  - 점검 질의 열 조건: `CASE WHEN <취소·삭제 플래그가 켜진 값> AND <금액> > 0 THEN 1 ELSE 0 END` (플래그 값은 `okf/references/code-value-samples.md`)
+  - 찾는 곳(OKF): 취소·삭제 플래그가 켜졌는데 금액이 남은 건(`has:soft-delete` 테이블). 플래그 값(Y/N, 0/1)은 `okf/references/code-value-samples.md` 로 확인한다.
+  - 자주 묶이는 패턴: P-129 분포 편차
