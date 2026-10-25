@@ -34,7 +34,8 @@ main agent 와 이 프로젝트의 모든 subagent 가 이 규약을 system prom
 - `sql_run(url, sql)`: SQL 한 개를 실행해 결과를 확인한다. `url` 에는 6절의 접속 URL 을 그대로 넣고, `sql` 에 SQL 을 넣는다. 값 확인, 조인 실측 검증, 문서로 부족한 데이터 확인, 본 SQL 시험 실행에 쓰며 여러 번 부를 수 있다.
 - `sql_submit(final_sql_query)`: 최종 SQL 하나를 제출한다. 결과로 실행된 SQL(`final_query`), 결과 행(`grid_data`), 전체 행 수(`total_rows_count`)를 돌려주며, 사용자 화면의 표는 이 결과로만 만들어진다. main agent 만 질문 1건당 1회 부른다.
 - `sql_run` 으로 질문에 맞는 결과를 이미 얻었더라도, 마지막에 `sql_submit` 을 반드시 1회 부른다. `final_sql_query` 에는 앞선 `sql_run` 을 참고해 사용자 질문에 맞는 조회 결과가 나오는 SQL 을 넣는다. 조회 결과가 0건이어도 질문에 맞는 SQL 이면 정답이다. 오류를 다 고치지 못했어도 그때까지 가장 나은 SQL 로 제출한다.
-- 호출 상한: main agent 의 `sql_run` 은 질문 1건당 10회까지, 직접 읽는 테이블 문서는 10개까지다. `sql_submit` 은 질문 1건당 1회이며, 제출 결과가 오류일 때만 고쳐서 1회 더 제출한다. subagent(term-grounding)의 호출은 main 의 횟수에 들어가지 않으며 subagent 정의의 상한(`sql_run` 6회)을 따른다. 10회를 다 쓰면 더 고치지 않고 그때까지 가장 나은 SQL 로 `sql_submit` 을 부른다.
+- 호출 상한: main agent 는 질문 1건당 `sql_run` 10회, 직접 읽는 테이블 문서 10개, `sql_submit` 1회(제출 결과가 오류일 때만 고쳐서 1회 재제출)까지다. subagent 의 호출은 main 의 횟수에 들어가지 않지만 term-grounding 은 위임 1건당 `sql_run` 6회·도구를 부르는 응답 12회까지다. 10회를 다 쓰면 더 고치지 않고 그때까지 가장 나은 SQL 로 `sql_submit` 을 부른다.
+- 호출은 필요한 만큼만 한다. 대부분은 `sql_run` 1~2회와 `sql_submit` 1회로 끝난다. 후보 테이블과 컬럼을 확정했으면 더 둘러보지 않고 SQL 을 쓰며, 확인하지 못한 것은 추가 조회로 메우기보다 답변의 「가정」이나 「확인 필요」에 적는다.
 
 ## 5. 진입 경로
 
@@ -57,6 +58,7 @@ OKF 문서 안의 링크는 번들 루트 기준 절대경로(`/schemas/...`)로
 | `skills/sql-query/SKILL.md` | `sql-query` skill 본문. `skill_view` 로 읽는다 | 데이터형 질문 |
 
 - 탐색 순서(데이터형 질문): 도메인 목록(`okf/domains/index.md`)에서 질문의 업무에 맞는 도메인 page 를 고른다 → 그 page 의 「## 테이블 목록」으로 테이블 선택(`sql-query` 「테이블 선택」 절) → 고른 테이블 문서 → 조인이 필요하면 테이블 문서의 `# Joins` 절에서 조인 문서. 도메인 page 로 후보를 찾지 못한 표현만 OWNER 목차를 보고, 목차로도 찾지 못할 때만 폴더 경로(`okf/schemas/<OWNER>/tables/`)로 파일 목록을 조회한다.
+- OKF 안에 없는 파일(목차에만 있고 문서가 없는 테이블, 없는 참고 문서)은 「번들에 없음」으로 두고 멈추지 않는다.
 - `okf/joins/graph.md` 는 300줄이 넘는 전체 인접 목록이다. 테이블 문서의 `# Joins` 절로 찾지 못한 다단계 경로를 찾을 때만 읽는다.
 - 같은 단계에서 필요한 문서는 한 응답에서 함께 읽고, 같은 대화에서 이미 읽은 문서는 다시 읽지 않는다.
 
