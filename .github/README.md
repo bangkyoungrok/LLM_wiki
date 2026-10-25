@@ -11,6 +11,6 @@ wiki 의 부정 패턴(P-001 ~ P-032) 2~3개 조합을 OKF 스키마에 대입�
 | `wiki/` | 부정 패턴, 선별 기준, 정상 업무, 기존 시나리오, ACFE·COSO |
 | `okf/` | OKF 번들 (`main` 브랜치 OKF.md) |
 
-- 출력: 보고서(1~6절) + `## 부록: 시나리오 JSON`(유효 시나리오마다 `{"scenario_name":"…","scenario_sql":"…"}`). 유효 시나리오가 없으면 부록을 쓰지 않는다.
+- 출력: 유효 시나리오 1건마다 11절 분석 보고서(부록 A-1 사용 테이블, A-2 탐지 SQL) + `## 만들지 못한 시나리오` + `## 부록: 시나리오 JSON`(시나리오마다 `{"scenario_name":"…","scenario_sql":"…"}`). 유효 시나리오가 없으면 JSON 부록을 쓰지 않는다.
 - 상한: main `sql_run` 10회, 테이블 문서 10개, `sql_submit` 1회(+1). scenario-worker 후보당 `sql_run` 5회, 동시 5개.
 - 등록 전에 `AGENTS.md` 6절 접속 URL 의 `<PASSWORD>` 를 실제 값으로 바꾼다.

@@ -12,7 +12,7 @@ Top-down agent 가 가장 먼저 읽는 진입 색인이다. agent 는 부정 �
 
 - [패턴 목록](wiki/patterns/index.md): 부정 32건(P-001 ~ P-032, 고의). 고의성 신호, 패턴별 OKF 후보 도메인과 SQL 대입 가능 여부, 조합 규칙(같은 행, 집단→행, 흐름→행), 조합 단서
 - 부정 패턴 page: `wiki/patterns/fraud/P-0xx.md`
-- 부실 패턴(P-101 ~ P-141)은 Bottom-up agent 가 쓰며 이 wiki 에는 없다
+- 데이터 이상징후 패턴(P-101 ~ P-141)은 Bottom-up agent 가 쓰며 이 wiki 에는 없다
 
 ## 스키마 (OKF 번들)
 
