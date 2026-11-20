@@ -1,0 +1,93 @@
+---
+topic: marketing_contract
+title: 마케팅·계약 관리
+description: 마케팅 캠페인 기획, 인플루언서 협업, 비용 산정 및 계약 조건 관리 실무 노하우와 사고 교훈
+sources: [BQMS#AZfGbphMT2UViutm.pdf, BQMS#AZfGbp38T2cViutm.pdf, BQMS#AZfFjTKcLeAVtEET.pdf, BQMS#AZfFhNycLToVtEET.pdf, BQMS#AZfFgWSMLQIVtEET.pdf, BQMS#AZfFeFL8LGkVtEET.pdf, BQMS#AZfFe9PcLJQVtEET.pdf, BQMS#AZfFic-sLY0VtEET.pdf]
+updated: 2026-11-13
+---
+
+# 마케팅·계약 관리
+
+## 업무 노하우
+- [marketing_contract-001] 인플루언서 협업 비용은 'Third-Party Costs - Creator Costs' 항목으로 산정하며, 모든 산출물, 이벤트 참석, 여행 비용 및 5% KSK(수수료)를 포함하여 실제 발생 비용(actual expenses) 기준으로 정산함 (출처: p.1 Leistungsübersicht 2025, p.3) (출처: BQMS#AZfGbphMT2UViutm.pdf p.1, p.3)
+- [marketing_contract-002] 제안서(Angebotsnummer)에는 서비스 기간(Leistungszeitraum)을 명시하며, 예시에서는 'Von PO bis 31.12.2025'로 설정함 (출처: p.1) (출처: BQMS#AZfGbphMT2UViutm.pdf p.1)
+- [marketing_contract-003] 인플루언서별 비용 산정 시 콘텐츠 유형(예: IG Reels, Stories)과 이벤트 참석 횟수, 여행 비용을 세부적으로 분리하여 기재함 (출처: p.1, p.3) (출처: BQMS#AZfGbphMT2UViutm.pdf p.1, p.3)
+- [marketing_contract-006] 계약 조건은 현재 유효한 SEG(Samsung Electronics GmbH)의 프레임워크 계약(Rahmenvertrag) 및 해당 결제 조건을 따름 (출처: p.2 Zahlungsbedingungen) (출처: BQMS#AZfGbphMT2UViutm.pdf p.2)
+- [marketing_contract-008] 발주서(Purchase Order) 도달 시 계약이 성립하며, 발주서가 견적과 다르거나 견적 없이 발주된 경우 수주인은 발주 도달 후 3영업일 이내에 발주확인서(Auftragsbestätigung)를 보내야 계약이 성립함. 기한 초과 또는 내용 변경 시 새로운 제안으로 간주되어 발주자의 수락이 필요함 (출처: p.8, Ziffer 2.1) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.8, Ziffer 2.1)
+- [marketing_contract-009] 수주인은 최소 월 1회 서면으로 진행 상황을 보고해야 하며, 회의 시 수주인이 회의록을 작성하여 5영업일 이내에 발주자에게 승인 요청해야 함. 승인 전까지 회의 내용은 구속력이 없음 (출처: p.8, Ziffer 3.2) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.8, Ziffer 3.2)
+- [marketing_contract-010] 발주자의 사전 서면 동의 없이는 제3자에게 업무를 위탁할 수 없으며, 위탁 시 발주자 선택에 따라 발주자 명의로 또는 수주인 명의로(발주자 계산) 계약 체결함 (출처: p.8, Ziffer 4.1-4.3) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.8, Ziffer 4.1-4.3)
+- [marketing_contract-011] 제3자 용역 발주 금액이 10,000유로 초과 시 2건, 50,000유로 초과 시 3건의 독립적 견적을 수집해야 함 (출처: p.8, Ziffer 4.1-4.3) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.8, Ziffer 4.1-4.3)
+- [marketing_contract-012] 데이터 유출 발생 시 24시간 이내 서면 통보가 필수이며, 통보 내용에는 영향, 조치 사항, 연락처 등이 포함되어야 함 (출처: p.15-16, Ziffer 5.3, 6.5) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.15-16, Ziffer 5.3, 6.5)
+- [marketing_contract-013] 데이터 반환/파기 요청 시 30일 이내에 완료하고, 완료 후 5일 이내에 서면 확인서를 제출해야 함 (출처: p.15-16, Ziffer 5.3, 6.5) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.15-16, Ziffer 5.3, 6.5)
+- [marketing_contract-014] 비밀번호는 최소 8자리(3개 조건 조합) 또는 10자리(2개 조건 조합)로 설정하고 3개월마다 변경해야 하며, 외부 네트워크 접속 시 VPN 등 안전한 인증 절차를 사용해야 함 (출처: p.20, Anlage B) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.20, Anlage B)
+- [marketing_contract-015] 개인정보 암호화 시 대칭키(AES-128/192/256, 3TDEA), 공개키(RSA-2048, RSAES-OAEP), 일방향 해시(SHA-224/256/384/512) 알고리즘 사용을 권장함 (출처: p.31) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.31)
+- [marketing_contract-016] 개인정보 파기 시 데이터베이스는 초기화 또는 덮어쓰기를 통해 복원을 방지하고, 물리적 매체는 소각/파쇄 또는 전용 기술 장비를 이용한 삭제를 수행해야 함 (출처: p.32) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.32)
+- [marketing_contract-017] 운영 데이터(개인정보 포함)를 테스트에 사용하는 것을 피해야 하며, 사용 시 민감한 세부 정보와 내용은 제거 또는 변형하여 보호해야 함 (출처: p.32) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.32)
+- [marketing_contract-018] 제3자에게 개인정보를 공개할 경우 사전 서면 승인 및 동일한 수준의 의무를 포함한 서면 계약 체결이 필요하며, Processor는 하도급사의 프라이버시 및 보안 수호를 초기 및 정기적으로 평가하고 문서화해야 함 (출처: p.27) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.27)
+- [marketing_contract-019] 계약 변경이나 계약적 선언이 서면 형식을 요구하는 경우, DocuSign, Adobe Sign 등 전자 서명 절차를 사용하여 전자적으로 서명된 경우에만 서면 형식 요건을 충족함 (출처: p.39) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.39)
+- [marketing_contract-020] 기존 계약에서 더 낮은 요구사항(단순 전자 서명)이 있었다면 본 서면 형식 합의 조항이 이를 대체하여 우선 적용되나, 더 엄격한 요구사항(법적 서면 형식, 자격 있는 전자 서명 등)이 있었다면 본 합의는 그 규정을 변경하지 않음 (출처: p.39) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.39)
+- [marketing_contract-028] POS 그래픽 제작 시 삼성 CI 준수 하에 레이아웃/포맷 적응, 이미지 합성, 제품 리터칭을 수행하며, 모든 작업은 삼성 또는 위임된 크리에이티브 에이전시와 조율 후 승인받아 데이터베이스에 등록함 (출처: p.1, p.5) (출처: BQMS#AZfFhNycLToVtEET.pdf p.1, p.5)
+- [marketing_contract-029] 수행자는 서비스 제공에 필요한 인적·물적 자원 확보 및 투입 인력의 전문성·적격성 보장이 의무이며, 인력 배치 시 연속성을 유지하고 상급자의 지도·감독을 받아야 함 (출처: p.13) (출처: BQMS#AZfFhNycLToVtEET.pdf p.13)
+- [marketing_contract-030] 삼성으로부터 외주 발주 및 조율을 위임받은 경우, 수행자는 적합한 공급자를 선정하여 삼성 승인 후 발주하며, 외주 계약은 시장 관행 조건에 부합해야 하고 통상적인 할인을 삼성에 전달해야 함 (출처: p.13) (출처: BQMS#AZfFhNycLToVtEET.pdf p.13)
+- [marketing_contract-031] 개인정보 처리 계약서(Anlage A) 작성 시 주 계약, 처리 목적, 범위, 데이터 카테고리, 데이터 주체 범위, 처리/저장 기간, 수신자, 승인된 하위 처리자, 처리 장소 등 10개 필수 항목을 기재해야 함 (출처: p.24, p.35) (출처: BQMS#AZfFhNycLToVtEET.pdf p.24, p.35)
+- [marketing_contract-032] 기술적·조직적 보안 조치(Anlage B)에서 권한 관리 시 최소 권한 원칙을 적용하고, 인력 변동 시 즉시 권한을 취소하며, 권한 변경 이력은 최소 3년(브라질 데이터는 5년) 보관해야 함 (출처: p.25, p.36) (출처: BQMS#AZfFhNycLToVtEET.pdf p.25, p.36)
+- [marketing_contract-033] EWR 외 제3국으로 데이터를 전송할 경우 사전 서면 동의가 필수이며, 표준계약서(SCC) 적용 시 SCC 조항이 일반 처리 조건보다 우선함 (출처: p.21, p.34) (출처: BQMS#AZfFhNycLToVtEET.pdf p.21, p.34)
+- [marketing_contract-044] 카탈로그 등 인쇄물 제작 시 삼성 CI 준수 검토 및 2회 수정 단계가 가격에 포함되며, 광고 이미지는 isocoated_v2 ICC 컬러 스페이스로 변환하여 PDF로 처리하고 Epson-Proof를 통해 삼성 담당자와 조정 후 승인받아 인쇄소 가이드라인에 따라 데이터 준비 및 발송함 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.1-2)
+- [marketing_contract-047] 개인 데이터 반환/파기 시 파기가 불가능한 경우 사유를 서면으로 통보하고, 반환/파기 예정일 10일 전부터 삼성의 명시적 서면 동의 없이는 데이터를 처리할 수 없음 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.25)
+- [marketing_contract-048] 개인 데이터는 전송 시 및 저장 시 암호화해야 하며, 비밀번호는 복호화 불가능한 일방향 암호화로 저장해야 함 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.28)
+- [marketing_contract-050] 제3자에게 위임한 업무의 경우, 제3자의 청구서는 마진 없이 그대로 전가(pass-through)해야 함 (출처: p.19, Ziffer 5.6) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.19, Ziffer 5.6)
+- [marketing_contract-053] 지급 성숙 조건에는 샘플, 템플릿, 품질 문서 등 부속 문서의 수령도 포함됨 (출처: p.19, Ziffer 5.7) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.19, Ziffer 5.7)
+- [marketing_contract-054] 계약 해지 시 해지 효력 발생일까지 수행된 작업 대가 및 해지 통지 수령 전 이미 구속력 있게 위임된 제3자 수행 비용에 대한 보상이 이루어짐 (출처: p.20, Ziffer 13.2) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.20, Ziffer 13.2)
+- [marketing_contract-055] 소프트웨어 결과물의 경우 대상 코드와 소스 코드 모두에 대해 지적재산권 이전 조항이 적용됨 (출처: p.19, Ziffer 10.1) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.19, Ziffer 10.1)
+- [marketing_contract-056] EEA 밖으로 개인정보를 이전할 경우 사전 서면 동의와 함께 GDPR Article 47에 따른 방법 또는 EU Processor Model Clauses 등 적절한 이전 메커니즘이 필요함 (출처: p.24, Ziffer 7.1-7.2) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.24, Ziffer 7.1-7.2)
+- [marketing_contract-057] 계약 체결 후 계약자가 발주자에게 하는 법적 효력이 있는 선언 및 통지(기한 설정, 하자 통지 등)는 서면 형식을 요함 (출처: p.21, Ziffer 15.2) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.21, Ziffer 15.2)
+- [marketing_contract-061] 개별 조항이 무효인 경우 나머지 조항은 유효하며, 무효 조항은 계약의 경제적 목적에 부합하는 유효한 조항으로 대체된 것으로 간주됨 (출처: p.21) (출처: BQMS#AZfFe9PcLJQVtEET.pdf p.21)
+- [marketing_contract-062] 매체 데이터베이스(MDB)에 편집된 이미지, 로고, 최종 광고 자료를 업로드할 때 카테고리 분류 및 키워드 지정, 최종 광고 자료와의 링크 작업을 수행해야 함 (출처: p.10) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.10)
+- [marketing_contract-063] 온라인 배너 제작 시 고객 제공 화면 디자인에 따라 정적/애니메이션 배너(JPEG, GIF, MP3/4, WebM)를 생성함 (출처: p.10) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.10)
+- [marketing_contract-064] 기술적·조직적 보안 조치(Exhibit B)는 ISO/IEC 27001 표준 또는 유사한 업계 인식을 준수해야 하며, 변경 사항은 서면으로 합의해야 함 (출처: p.46-47) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.46-47)
+- [marketing_contract-065] 물리적 보안 조치로 개인 데이터가 저장된 문서 및 보조 저장 매체는 잠금 장치로 보호된 안전한 장소에 보관해야 함 (출처: p.47) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.47)
+- [marketing_contract-066] 암호화 의무는 시스템 외부 전송 시, 원격 접속 시, 휴대용 기기 사용 시, 법이 요구하는 경우에 적용됨 (출처: p.43) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.43)
+- [marketing_contract-067] Company는 법 변경 또는 감독 당국 요구에 따라 GDTP를 수정할 수 있으며, 1개월 전 서면 통지 시 Processor가 1개월 내 이의 없으면 수락된 것으로 간주함 (출처: p.45) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.45)
+- [marketing_contract-068] 적용 법률 변경으로 계약 이행에 중대한 부정적 영향이 예상될 경우, 인지 후 15일 이내에 서면으로 통지해야 함 (출처: p.29, p.42) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.29, p.42)
+- [marketing_contract-069] Company는 제3자 독립 감사를 의뢰할 수 있으며, 비용은 원칙적으로 각자 부담하나 Processor의 위반이 의심되어 감사 후 그 의심이 사실로 확인되면 Processor는 감사 비용을 보전해야 함 (출처: p.44) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.44)
+
+## 사고 사례와 교훈
+- [marketing_contract-034] 데이터 보안 사고 발생 시 처리자는 자비로 재발 방지 시정 조치를 수행해야 하며, 회사 요청 시 데이터 보호법상 요구되는 조치(피해자 통지, 무료 신용 보고서 제공, 카드 차단 비용 보상 등)를 수행하거나 지원해야 함 (출처: p.22, p.33) (출처: BQMS#AZfFhNycLToVtEET.pdf p.22, p.33)
+- [marketing_contract-035] 감사 후 발견된 보안 문제가 처리자의 책임 범위 내일 경우, 서면 통지 수령 후 10일 이내에 문제를 해결하거나 수용 가능한 해결 계획을 제시해야 하며, 미이행 시 회사는 계약을 즉시 해지하고 비율에 따른 수수료 환불을 요구할 수 있음 (출처: p.22, p.34) (출처: BQMS#AZfFhNycLToVtEET.pdf p.22, p.34)
+- [marketing_contract-075] 데이터 유출 시 공급자는 조사 수행, 결과 요약 제출, 보안 취약점 수정 협력, 재발 방지 조치(자비 부담)를 수행해야 하며, 회사 사전 서면 동의 없이는 공개 발표나 피해자/당국 통지를 할 수 없음 (출처: p.31) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.31)
+- [marketing_contract-076] 계약 위반 또는 보안 문제 발견 시, 회사는 즉시 계약 해지 및 비용 반환을 요구할 수 있으며, 공급자는 30일 이내에 반환해야 함 (출처: p.32) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.32)
+
+## 주의사항
+- [marketing_contract-004] 제안된 모든 금액은 Nettopreise(세금 제외 가격)이며, 독일 소재 기업의 경우 19%의 Umsatzsteuer(부가가치세)가 추가로 부과됨 (출처: p.2 Umsatzsteuer) (출처: BQMS#AZfGbphMT2UViutm.pdf p.2)
+- [marketing_contract-005] 외부 비용(Fremdkosten)은 증빙(Rechnungen/Evidences) 제출 후 지급하며, 청구서(invoice)에 증빙 자료를 함께 제공해야 함 (출처: p.2 Zahlungsbedingungen) (출처: BQMS#AZfGbphMT2UViutm.pdf p.2)
+- [marketing_contract-007] 제안서(Angebotsunterzeichnung) 서명 후에도 별도의 계약서(Vereinbarung)가 작성·발송되며, 이 계약서를 추가로 수락(annehmen)해야 제안서가 효력을 발생함 (출처: p.1 LEISTUNGSUMFANG 하단) (출처: BQMS#AZfGbp38T2cViutm.pdf p.1)
+- [marketing_contract-021] 납기 지연 시 1주당 발주 금액의 3% 벌금이 부과되며, 최대 10% 한도로 제한됨 (출처: p.9, Ziffer 6.3) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.9, Ziffer 6.3)
+- [marketing_contract-022] 고정가가 아닌 경우, 견적서(Kostenvoranschlag)는 최대 10% 편차 내에서 구속력이 있으며, 비용 증가 시 Contractor는 요청 없이 서면으로 설명해야 함 (출처: p.9, Ziffer 5.3) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.9, Ziffer 5.3)
+- [marketing_contract-023] 기본 결제 조건은 문서 수령일로부터 45일(PO 기준) 또는 60일(AEB 기준, 최종 검수 및 적정 청구서 수령 후)이며, 14일 이내 결제 시 3%, 30일 이내 결제 시 2% 할인(스콘토)이 적용됨 (출처: p.3, p.19, Ziffer 5.7) (출처: p.9, Ziffer 5.7) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.9, Ziffer 5.7, BQMS#AZfFeFL8LGkVtEET.pdf p.3, p.19, Ziffer 5.7)
+- [marketing_contract-024] 발주자는 5영업일 예고로 정당한 해지가 가능하나, 수주인의 사전 해지는 불가함 (출처: p.11, Ziffer 13.2) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.11, Ziffer 13.2)
+- [marketing_contract-025] 수주인이 제작한 모든 결과물(컨셉, 디자인 등)의 권리는 발생 즉시 발주자에게 귀속되며, 양도가 불가능한 경우(예: 저작권)에는 무제한, 양도 가능, 재라이선스 가능, 독점적 사용권을 부여해야 함 (출처: p.10, Ziffer 10.1) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.10, Ziffer 10.1)
+- [marketing_contract-026] 수주인의 일반 조건은 AEB(삼성 일반 구매 조건)와 충돌 시 무효이며, 기존 프레임워크 계약이 있을 경우 프레임워크 계약이 AEB보다 우선함 (출처: p.8, Ziffer 1.2) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.8, Ziffer 1.2)
+- [marketing_contract-027] 청구서에는 반드시 발주 번호(P/O Number), 상세 업무 내용, 수량, 품목 번호를 기재해야 함 (출처: p.7, p.9 Ziffer 5.6) (출처: BQMS#AZfFjTKcLeAVtEET.pdf p.7, p.9 Ziffer 5.6)
+- [marketing_contract-036] POS 그래픽 작업의 단가에는 레이아웃 적응 등 대부분의 작업에 2회, 새로운 디자인 레이아웃에 4회의 수정 단계가 포함되어 있으며, 추가 수정은 별도 비용이 발생할 수 있음 (출처: p.1, p.5, p.6) (출처: BQMS#AZfFhNycLToVtEET.pdf p.1, p.5, p.6)
+- [marketing_contract-037] 청구서에는 실제 수행된 업무와 비용이 상세히 명시되어야 하며, 선금 후 실제 비용이 적게 나온 경우 차액은 즉시 반환되어야 하고 다른 프로젝트에 사용될 수 없음 (출처: p.14) (출처: BQMS#AZfFhNycLToVtEET.pdf p.14)
+- [marketing_contract-038] 수행자는 직원 및 프리랜서에게 적용되는 최저임금 및 노동법 규정을 준수해야 하며, 삼성 요청 시 세무사 확인서 등 증빙 서류를 제공해야 하고 위반 시 삼성에 대한 모든 책임을 면책시켜야 함 (출처: p.15) (출처: BQMS#AZfFhNycLToVtEET.pdf p.15)
+- [marketing_contract-039] 감사 비용은 원칙적으로 각 당사자가 부담하나, 처리자의 법 위반/계약 위반 혐의가 사실로 확인될 경우 처리자는 감사 비용을 회사에 보상해야 함 (출처: p.22, p.34) (출처: BQMS#AZfFhNycLToVtEET.pdf p.22, p.34)
+- [marketing_contract-040] 일반 구매 조건(GPC)이나 계약서의 면책 조항, 고의/과실 배제, 손해배상 한도 등은 데이터 처리 조건에 적용되지 않으며, 처리자의 책임에는 어떠한 제한이나 배제도 없음 (출처: p.22, p.34) (출처: BQMS#AZfFhNycLToVtEET.pdf p.22, p.34)
+- [marketing_contract-041] 데이터 사고에 대한 공개 발표는 회사의 사전 서면 동의 없이는 금지됨 (출처: p.22, p.33) (출처: BQMS#AZfFhNycLToVtEET.pdf p.22, p.33)
+- [marketing_contract-042] 일반 구매 조건(GPC)과 데이터 처리 조건 간 충돌 시 데이터 처리 조건이 우선함 (출처: p.23, p.30, p.35) (출처: BQMS#AZfFhNycLToVtEET.pdf p.23, p.30, p.35)
+- [marketing_contract-043] 법적/규제 조치(압수, 기소 등)를 인지하거나 회사 지시가 법에 위배된다고 판단한 경우, 처리자는 최대 1일(1 business day) 이내에 회사에 통지해야 함 (출처: p.21, p.33) (출처: BQMS#AZfFhNycLToVtEET.pdf p.21, p.33)
+- [marketing_contract-045] 수주인은 건당 최소 EUR 1,000,000의 직업 책임 보험(Berufshaftpflicht-Versicherung)을 유지해야 함 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.6)
+- [marketing_contract-046] 계약은 독일 연방공화국 법을 적용하며, UN 국제매매계약법(CISG)은 배제되고 관할 법원은 프랑크푸르트 암 마인(Frankfurt am Main)으로 한정됨 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.8)
+- [marketing_contract-049] 하자가 실제로 존재하지 않음이 밝혀지더라도, 검사 및 개선에 드는 비용은 공급자가 부담하며, 삼성이 하자가 없음을 알았거나 중대한 과실로 알지 못한 경우 손해배상 책임이 발생할 수 있음 (출처: BQMS#AZfFgWSMLQIVtEET.pdf p.20)
+- [marketing_contract-051] 계약자는 제3자에게만 지급될 서비스를 위해 청구서를 발행할 수 없음 (출처: p.19, Ziffer 5.5) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.19, Ziffer 5.5)
+- [marketing_contract-052] 지급은 계약에 따른 납품의 승인이나 수락을 의미하지 않음 (출처: p.19, Ziffer 5.10) (출처: BQMS#AZfFeFL8LGkVtEET.pdf p.19, Ziffer 5.10)
+- [marketing_contract-058] 지연 이자는 연 3%이며, 계약자가 연체 이자를 청구하기 전 반드시 독촉(Mahnung)을 선행해야 함 (출처: p.5, 5.8; p.19) (출처: BQMS#AZfFe9PcLJQVtEET.pdf p.5, 5.8; p.19)
+- [marketing_contract-059] 계약자가 독점적 권리를 취득하지 못한 작업물을 동일하거나 실질적 변경 없는 형태로 다른 의뢰인에게 사용할 수 없으며, 제3자의 권리 침해가 있을 경우 계약자가 배상 및 법적 방어 비용을 부담해야 함 (출처: p.20) (출처: BQMS#AZfFe9PcLJQVtEET.pdf p.20)
+- [marketing_contract-060] 법률에 의해 개인정보 처리가 요구되는 경우, 계약자는 처리 전에 발주자에게 법적 요건을 통지해야 하며, 공익상 중요한 이유로 통지가 금지되는 경우를 제외함 (출처: p.22) (출처: BQMS#AZfFe9PcLJQVtEET.pdf p.22)
+- [marketing_contract-070] 계약 종료 후에도 계약 관련 정보에 대해 무기한 비밀 유지 의무가 있음 (출처: p.26, p.40) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.26, p.40)
+- [marketing_contract-071] 비밀번호 정책에서 일정 횟수 이상 오류 시 접근 제한이 적용됨 (출처: p.46) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.46)
+- [marketing_contract-072] GDTP에 따른 Company의 권리와 구제책은 계약 내의 책임 제한, 중재, 불가항력 조항의 적용을 받지 않으며, Processor의 책임에 대한 배제 또는 제한은 없음 (출처: p.45) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.45)
+- [marketing_contract-073] Company 지시 불이행, 지시의 위법성 판단, 감독 당국 조치, 제3자에 의한 기밀성 훼손 시 인지 즉시(최대 1일 이내) 통지해야 함 (출처: p.44) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.44)
+- [marketing_contract-074] 데이터 반환/파기가 불가능한 경우(법적 제한 등), Processor는 Return Date 10일 전부터 Company의 명시적 서면 동의 없이는 데이터를 처리할 수 없으며, 해당 데이터에 대해 GDTP의 보호 조항을 연장 적용해야 함 (출처: p.43) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.43)
+
+## 확인 필요

@@ -1,6 +1,6 @@
 # 감사 에이전트 Wiki
 
-감사 에이전트가 읽는 지침(AGENTS), 기술(skills), sub-agent 정의를 담는다. 지식 문서(`okf/`, `domain_knowledge/`)는 이 브랜치에 없고, 실행 환경에 있는 것을 쓴다.
+감사 에이전트가 읽는 지침(AGENTS), 기술(skills), sub-agent 정의, 도메인 정보(`domain_knowledge/`)를 담는다. OKF 문서(`okf/`)는 이 브랜치에 없고, 실행 환경에 있는 것을 쓴다.
 
 ## 두 가지 판
 
@@ -15,6 +15,7 @@
 
 | 경로 | full | t2s |
 |---|:---:|:---:|
+| `domain_knowledge/` | ✓ | ✓ |
 | `skills/sql-query/` | ✓ | ✓ |
 | `sub-agents/schema-linker/` | ✓ | ✓ |
 | `sub-agents/term-grounding/` | ✓ | ✓ |
@@ -32,7 +33,7 @@
 
 ## 고칠 때
 
-- 두 판이 함께 쓰는 파일(`skills/sql-query/`, `sub-agents/schema-linker/`, `sub-agents/term-grounding/`)은 한 번 고치면 두 판에 똑같이 적용된다.
+- 두 판이 함께 쓰는 파일(`domain_knowledge/`, `skills/sql-query/`, `sub-agents/schema-linker/`, `sub-agents/term-grounding/`)은 한 번 고치면 두 판에 똑같이 적용된다.
 - 판마다 다른 내용은 `AGENTS.md` 와 `AGENTS-t2s.md` 에만 쓴다.
 - `skills/sql-query/SKILL.md` 의 시나리오 SQL 절은 full 에서만 쓴다. t2s 에서는 읽히지 않는다.
 - 파일 경로는 맨 위 폴더부터 쓴다. 예: `skills/sql-query/SKILL.md`, `sub-agents/schema-linker/SKILL.md`, `okf/wiki/normal-patterns.md`
