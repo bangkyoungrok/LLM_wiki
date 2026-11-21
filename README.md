@@ -19,12 +19,12 @@ skills/question-generation/                질문 만들기 skill
 sub-agents/question-scout/                 top-down 후보 모으기
 sub-agents/question-table-scout/           bottom-up 후보 모으기
 sub-agents/question-grounder/              고른 후보 확인
-okf/references/scenarios/summary.md        variant 에서 기존 시나리오를 고르는 목록
+okf/wiki/scenario/summary.md               variant 에서 기존 시나리오를 고르는 목록
 okf/wiki/patterns/index.md                 패턴 목차
 okf/wiki/patterns/perspective/             드릴다운 패턴(DP-001~DP-023)
 ```
 
-이 브랜치의 `okf/` 에는 위 파일만 있다. 나머지 OKF 문서(`okf/references/scenarios/<ID>.md` 등)는 실행 환경에 있는 것을 쓴다.
+이 브랜치의 `okf/` 에는 위 파일만 있다. 나머지 OKF 문서(`okf/wiki/scenario/<ID>.md` 등)는 실행 환경에 있는 것을 쓴다.
 
 ## 고칠 때
 

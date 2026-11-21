@@ -28,7 +28,7 @@
 
 - **질문은 바로 해석할 수 있어야 한다.** 업무 범위(도메인·프로세스), 기간, 위험 주제, 의도가 한 문장 안에 있어야 한다.
 - **질문은 데이터로 답할 수 있어야 한다.** 실제로 있는 거래 테이블과 기준 날짜·금액 컬럼으로 답할 수 있어야 한다.
-- **질문은 근거에 기대야 한다.** `okf/wiki` 의 패턴과 `okf/real-cases` 의 실제 사고 수법, 테이블 구조, 또는 `okf/references/scenarios` 의 기존 시나리오에 연결한다.
+- **질문은 근거에 기대야 한다.** `okf/wiki` 의 패턴과 `okf/real-cases` 의 실제 사고 수법, 테이블 구조, 또는 `okf/wiki/scenario` 의 기존 시나리오에 연결한다.
 - **질문은 조건 단위다.** 특정 업체·거래처·사원·문서번호를 지목하지 않는다.
 - **모드마다 근거가 다르다.** top-down 은 부정 패턴과 실제 사고 문서, bottom-up 은 테이블 문서의 구조, variant 는 기존 시나리오 md, drilldown 은 누적 보고서와 드릴다운 패턴(`okf/wiki/patterns/perspective/`)을 쓴다.
 - **드릴다운은 좁힌다.** 드릴다운 질문의 결과는 늘 직전 단계 결과의 일부다. 원본 질의와 이전 관점은 그대로 두고 관점만 더한다. 기간을 늘리거나 조건을 풀거나 직전 결과 밖의 건을 보지 않는다.
@@ -42,10 +42,9 @@
 | `okf/glossary/` | 업무 용어와 컬럼·값의 연결, 업무 개념 | `okf/glossary/index.md`, `okf/glossary/biz-knowledge/`, `okf/glossary/biz-rules/` |
 | `okf/real-cases/` | 실제 사고 수법, 데이터 신호, 취약점, 패턴별 사례 목록 | `okf/real-cases/index.md`, `okf/real-cases/patterns.md`, `okf/real-cases/fraud.md`, `okf/real-cases/expedient-practices.md`, `okf/real-cases/deficiencies.md` |
 | `okf/schemas/<OWNER>/` | 테이블·뷰 구조, frontmatter 태그, 컬럼·한글명 | `okf/schemas/<OWNER>/index.md`, `okf/schemas/<OWNER>/tables/<TABLE>.md`. `<OWNER>` 는 `skills/question-generation/references/local-values.md` 에 있다 |
-| `okf/references/scenarios/` | 기존 시나리오별 감사 포인트, 사용 테이블, 조건, 단계(`variant` 만) | `okf/references/scenarios/summary.md`, `okf/references/scenarios/<ID>.md` |
-| `okf/wiki/` | 감사 패턴, 드릴다운 패턴, 사고 유형, 선별 기준, 정상 업무, 위험 해석, 기존 시나리오 | `okf/wiki/index.md`, `okf/wiki/patterns/index.md`, `okf/wiki/patterns/fraud/index.md`, `okf/wiki/patterns/anomaly/index.md`, `okf/wiki/patterns/perspective/index.md`, `okf/wiki/criteria/`, `okf/wiki/normal-patterns.md`, `okf/wiki/risk-interpretation.md`, `okf/wiki/examples/index.md` |
+| `okf/wiki/` | 감사 패턴, 드릴다운 패턴, 사고 유형, 선별 기준, 정상 업무, 위험 해석, 기존 시나리오, variant 의 기존 시나리오별 조건·테이블 | `okf/wiki/index.md`, `okf/wiki/patterns/index.md`, `okf/wiki/patterns/fraud/index.md`, `okf/wiki/patterns/anomaly/index.md`, `okf/wiki/patterns/perspective/index.md`, `okf/wiki/criteria/`, `okf/wiki/normal-patterns.md`, `okf/wiki/risk-interpretation.md`, `okf/wiki/examples/index.md`, `okf/wiki/scenario/summary.md`, `okf/wiki/scenario/<ID>.md` |
 
-- 위 여섯 폴더 밖은 읽지 않는다. `okf/wiki/examples/index.md` 가 다른 폴더의 파일을 링크해도 열지 않는다.
+- 위 다섯 폴더 밖은 읽지 않는다. `okf/wiki/examples/index.md` 가 다른 폴더의 파일을 링크해도 열지 않는다.
 - 테이블 문서의 `# Joins` 절은 읽어도 된다.
 - `okf/glossary/biz-rules/` 는 업무 배경으로만 쓰고, 테이블·컬럼 근거로 쓰지 않는다.
 
@@ -77,7 +76,7 @@ sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 의 �
 | 누가 | 상한 |
 | :--- | :--- |
 | main-agent | `question-scout`·`question-table-scout` 각 1회, `question-grounder` 1회(후보를 바꿀 때 +1회). 직접 읽는 도메인 page 4개, 테이블 문서 8개 |
-| main-agent(`variant`) | `okf/references/scenarios/summary.md` 1개(ID 가 없을 때), 기존 시나리오 md 1개, 테이블 문서 4개 |
+| main-agent(`variant`) | `okf/wiki/scenario/summary.md` 1개(ID 가 없을 때), 기존 시나리오 md 1개, 테이블 문서 4개 |
 | main-agent(`drilldown`) | 드릴다운 패턴 index 1개, 고른 패턴 파일 3개, 테이블 문서 4개 |
 | `question-scout`, `question-table-scout` | 도구를 부르는 응답 10회, 도메인 page 4개, 테이블 문서 8개, 돌려주는 후보 5개 |
 | `question-grounder` | 도구를 부르는 응답 8회, 테이블 문서 6개 |

@@ -6,9 +6,9 @@
 
 ## 시나리오 고르기
 
-- 입력에 시나리오 ID 가 있으면 `okf/references/scenarios/<ID>.md` 를 읽는다.
-- ID 가 없으면 `okf/references/scenarios/summary.md` 의 「시나리오 목록」 표에서 요청의 도메인·테이블·키워드에 가장 맞는 1건을 고른다. 단서가 없으면 아무거나 1건을 고른다.
-- `okf/references/scenarios/summary.md` 는 시나리오를 고를 때만 쓴다.
+- 입력에 시나리오 ID 가 있으면 `okf/wiki/scenario/<ID>.md` 를 읽는다.
+- ID 가 없으면 `okf/wiki/scenario/summary.md` 의 「시나리오 목록」 표에서 요청의 도메인·테이블·키워드에 가장 맞는 1건을 고른다. 단서가 없으면 아무거나 1건을 고른다.
+- `okf/wiki/scenario/summary.md` 는 시나리오를 고를 때만 쓴다.
 
 ## md 에서 쓰는 것
 
