@@ -1,6 +1,6 @@
 ---
 name: variant-scenario-generation
-description: 기존 시나리오 1건을 바꿔 새 감사 시나리오를 만드는 Variant 분석. 기준 시나리오 문서(okf/references/scenarios/<ID>.md)를 읽어 바꿀 조건과 유지할 조건을 조건·컬럼에 연결하고, main-agent 가 시나리오 SQL 을 새로 써서 데이터에서 확인한 뒤, audit-report 로 감사 보고서를 낸다. 입력 JSON 의 mode 가 variant 이거나 "기존 「…」 시나리오를 변형해서 …" 같은 요청에 쓴다.
+description: 기존 시나리오 1건을 바꿔 새 감사 시나리오를 만드는 Variant 분석. 기준 시나리오 문서(okf/wiki/scenario/<ID>.md)를 읽어 바꿀 조건과 유지할 조건을 조건·컬럼에 연결하고, main-agent 가 시나리오 SQL 을 새로 써서 데이터에서 확인한 뒤, audit-report 로 감사 보고서를 낸다. 입력 JSON 의 mode 가 variant 이거나 "기존 「…」 시나리오를 변형해서 …" 같은 요청에 쓴다.
 ---
 
 # variant-scenario-generation
@@ -19,7 +19,7 @@ description: 기존 시나리오 1건을 바꿔 새 감사 시나리오를 만�
 
 1. **분석 기간**: 입력의 `scope.period`(시작일·종료일 모두 포함)를 쓴다. 없으면 직전 달 말일까지 12개월이다. 이 기간은 끝까지 바꾸지 않는다.
 2. **도메인 정보**(필요할 때만): 질문의 용어나 업무 배경을 OKF 문서만으로 알 수 없으면 AGENTS.md 「도메인 정보 참고」대로 읽는다.
-3. **기준 시나리오 문서**: `okf/references/scenarios/<시나리오 ID>.md` 를 읽는다. 입력에 시나리오 ID 가 없으면 `okf/references/scenarios/summary.md` 에서 질문에 맞는 시나리오 1건을 고른다. 문서에는 원문 SQL 이 없다. 조건 인벤토리(조건 ID, 단계, 값, 원본 컬럼, 변형 등급), 조건용 파생 컬럼, 단계별 필터, 공식 단계, 제약, SQL 구조 스켈레톤을 본다.
+3. **기준 시나리오 문서**: `okf/wiki/scenario/<시나리오 ID>.md` 를 읽는다. 입력에 시나리오 ID 가 없으면 `okf/wiki/scenario/summary.md` 에서 질문에 맞는 시나리오 1건을 고른다. 문서에는 원문 SQL 이 없다. 조건 인벤토리(조건 ID, 단계, 값, 원본 컬럼, 변형 등급), 조건용 파생 컬럼, 단계별 필터, 공식 단계, 제약, SQL 구조 스켈레톤을 본다.
 4. **바꿀 조건**: 입력의 `variant.changes`, `variant.kept_conditions`, `variant.joined_tables`, `variant.cautions` 를 문서의 조건 ID·원본 컬럼·단계에 연결한다. 입력 JSON 이 없으면 질문에서 바꿀 조건과 유지할 조건을 정한다.
 5. **지킬 것**:
    - 기준 시나리오 문서 「사용 테이블」은 시나리오 SQL 에서 빼지 않는다.

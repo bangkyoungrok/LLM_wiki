@@ -23,9 +23,9 @@ main-agent 는 요청을 읽고 필요한 상황에 맞는 skill 을 불러 쓴�
 | `okf/joins/` | 조인 근거와 조인 그래프(`okf/joins/graph.md`) |
 | `okf/codes/` | 코드값의 의미 |
 | `okf/glossary/` | 업무 용어(`okf/glossary/biz-knowledge/`)와 업무 규칙(`okf/glossary/biz-rules/`) |
-| `okf/references/` | 코드값 샘플, 그레인 샘플, 기존 시나리오 목록, Variant 의 기준 시나리오 문서(`okf/references/scenarios/`) 등 보조 자료 |
+| `okf/references/` | 코드값 샘플, 그레인 샘플, 기존 시나리오 목록 등 보조 자료 |
 | `okf/t2s/` | SQL 작성 규칙(`okf/t2s/rules/`)과 승인된 예제(`okf/t2s/examples/`) |
-| `okf/wiki/` | 감사 시나리오 지식: 부정 패턴(`okf/wiki/patterns/fraud/`, P-001~P-032), 이상징후 패턴(`okf/wiki/patterns/anomaly/`, P-101~P-141), 정상 업무 패턴(`okf/wiki/normal-patterns.md`), 위험 해석(`okf/wiki/risk-interpretation.md`), 선별 기준(`okf/wiki/criteria/`) |
+| `okf/wiki/` | 감사 시나리오 지식: 부정 패턴(`okf/wiki/patterns/fraud/`, P-001~P-032), 이상징후 패턴(`okf/wiki/patterns/anomaly/`, P-101~P-141), 정상 업무 패턴(`okf/wiki/normal-patterns.md`), 위험 해석(`okf/wiki/risk-interpretation.md`), 선별 기준(`okf/wiki/criteria/`), Variant 의 기준 시나리오 문서(`okf/wiki/scenario/`) |
 | `okf/real-cases/` | 실제 사고 사례 — 시나리오 생성·변형 단서(수법·신호·취약점, 패턴별 역인덱스) |
 | `skills/` | main-agent 가 필요할 때 부르는 기술 |
 | `sub-agents/` | 정해진 단계를 맡는 sub-agent 정의 |
