@@ -1,6 +1,6 @@
 ---
 name: sql-query
-description: 감사시스템 Oracle 에서 SQL 을 쓰고 실행하는 기술. execute_sql 과 submit_sql 을 언제 어떻게 쓰는지, 테이블 문서 읽는 법, SQL 작성 규칙, 데이터 질문에 답하는 순서, 시나리오 SQL 의 형식과 건수 확인을 담는다. 건수·합계·목록·구조 같은 데이터 질문에 쓰고, Top-down·Bottom-up 의 시나리오 탐색도 이 skill 의 시나리오 SQL 쓰는 법을 따른다.
+description: 감사시스템 Oracle 에서 SQL 을 쓰고 실행하는 기술. execute_sql 과 submit_sql 을 언제 어떻게 쓰는지, 테이블 문서 읽는 법, SQL 작성 규칙, 데이터 질문에 답하는 순서, 시나리오 SQL 의 형식과 건수 확인을 담는다. 건수·합계·목록·구조 같은 데이터 질문에 쓰고, Top-down·Bottom-up·Variant 의 시나리오 탐색도 이 skill 의 시나리오 SQL 쓰는 법을 따른다.
 ---
 
 # sql-query
@@ -79,13 +79,13 @@ SQL 을 쓰고 실행하는 방법은 이 skill 한 곳에 있다. 다른 skill 
 
 어떤 테이블이 있는지, 컬럼·조인 구조가 어떤지처럼 문서만으로 답할 수 있는 질문은 SQL 도구를 부르지 않는다.
 
-## 5. 시나리오 SQL (Top-down·Bottom-up 시나리오 탐색)
+## 5. 시나리오 SQL (Top-down·Bottom-up·Variant 시나리오 탐색)
 
 시나리오 SQL 은 보고서 부록과 다음 단계 프로그램이 글자 그대로 쓴다.
 
 **형식**
 
-- Oracle `SELECT` 한 줄. 주석, 세미콜론, `FETCH FIRST`, 바인드 변수를 쓰지 않는다.
+- Oracle `SELECT` 한 줄. `WITH`, 주석, 세미콜론, `FETCH FIRST`, 바인드 변수를 쓰지 않는다. 중간 집계는 `FROM` 안 하위 질의로 쓴다.
 - 조건에 걸리는 거래 한 건이 한 행이 되게 쓴다. 맨 앞 세 열은 필수 열이다.
 - 기간은 분석 기간을 기준 날짜 형식에 맞춘 리터럴로 쓴다.
 - 특정 거래처·사원 값을 조건에 넣지 않는다. 특정 대상에 몰린 것을 보려면 대상별 값을 계산하는 하위 질의를 쓴다.

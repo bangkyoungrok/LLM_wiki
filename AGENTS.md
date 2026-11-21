@@ -2,7 +2,7 @@
 
 ## 1. 프로젝트 개요
 
-감사 시나리오를 만들고(Top-down·Bottom-up), 검증하고, 일반 데이터 질문에 답하는 에이전트의 Wiki 다. 지식은 `okf/` 와 `domain_knowledge/` 에 있고, 특정 일을 하는 기술은 `skills/`, 일부 단계를 맡는 sub-agent 는 `sub-agents/` 에 있다.
+감사 시나리오를 만들고(Top-down·Bottom-up·Variant), 검증하고, 일반 데이터 질문에 답하는 에이전트의 Wiki 다. 지식은 `okf/` 와 `domain_knowledge/` 에 있고, 특정 일을 하는 기술은 `skills/`, 일부 단계를 맡는 sub-agent 는 `sub-agents/` 에 있다.
 
 main-agent 는 요청을 읽고 필요한 상황에 맞는 skill 을 불러 쓴다. Sub-agent 는 skill 이 정한 단계에서만 부른다.
 
@@ -23,7 +23,7 @@ main-agent 는 요청을 읽고 필요한 상황에 맞는 skill 을 불러 쓴�
 | `okf/joins/` | 조인 근거와 조인 그래프(`okf/joins/graph.md`) |
 | `okf/codes/` | 코드값의 의미 |
 | `okf/glossary/` | 업무 용어(`okf/glossary/biz-knowledge/`)와 업무 규칙(`okf/glossary/biz-rules/`) |
-| `okf/references/` | 코드값 샘플, 그레인 샘플, 기존 시나리오 목록 등 보조 자료 |
+| `okf/references/` | 코드값 샘플, 그레인 샘플, 기존 시나리오 목록, Variant 의 기준 시나리오 문서(`okf/references/scenarios/`) 등 보조 자료 |
 | `okf/t2s/` | SQL 작성 규칙(`okf/t2s/rules/`)과 승인된 예제(`okf/t2s/examples/`) |
 | `okf/wiki/` | 감사 시나리오 지식: 부정 패턴(`okf/wiki/patterns/fraud/`, P-001~P-032), 이상징후 패턴(`okf/wiki/patterns/anomaly/`, P-101~P-141), 정상 업무 패턴(`okf/wiki/normal-patterns.md`), 위험 해석(`okf/wiki/risk-interpretation.md`), 선별 기준(`okf/wiki/criteria/`) |
 | `okf/real-cases/` | 실제 사고 사례 — 시나리오 생성·변형 단서(수법·신호·취약점, 패턴별 역인덱스) |
@@ -45,17 +45,20 @@ Oracle 스키마는 두 개다. `APPADAMSUSER` 는 업무 데이터, `SETADAMSUS
 
 ## 3. skill 고르기
 
+입력 JSON 에 `mode` 가 있으면 그 값으로 고른다: `top-down` → `topdown-scenario-generation`, `bottom-up` → `bottomup-scenario-generation`, `variant` → `variant-scenario-generation`. `mode` 가 없으면 아래 표처럼 요청을 보고 고른다.
+
 | 요청 | skill |
 |---|---|
 | 업무 규칙·통제·부정 위험에서 출발해 감사 시나리오를 만들어 달라("매출 쪽 부정 위험 시나리오 만들어줘") | `topdown-scenario-generation` |
 | 실제 데이터를 보고 이상한 것에서 시나리오를 만들어 달라("데이터를 보고 이상한 걸 찾아줘"), 시나리오 JSON 을 출발점으로 데이터를 봐 달라 | `bottomup-scenario-generation` |
+| 기존 시나리오 1건을 바꿔 새 감사 시나리오를 만들어 달라("기존 「…」 시나리오를 변형해서 …") | `variant-scenario-generation` |
 | 시나리오(`scenario_name`, `scenario_sql`)가 포털 등록 후보로 적합한지 판정해 달라 | `scenario-validation` |
 | 데이터 조회·집계·목록·구조 질문 | `sql-query` |
 | 업무 개념 설명 같은 일반 질문 | skill 없이 필요한 Wiki 문서를 읽고 답한다. DB 값이 꼭 필요할 때만 `sql-query` |
 
 Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출발하면 Top-down, 데이터의 분포·반복·누락·불일치에서 출발하면 Bottom-up 이다.
 
-`audit-report` 는 Top-down·Bottom-up 의 마지막 단계에서 쓰는 보고서 형식이다. 따로 고르는 skill 이 아니다.
+`audit-report` 는 Top-down·Bottom-up·Variant 의 마지막 단계에서 쓰는 보고서 형식이다. 따로 고르는 skill 이 아니다.
 
 ## 4. 업무별 흐름
 
@@ -75,7 +78,13 @@ Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출
 3. 시나리오 탐색 (main-agent): 이상치로 시나리오 SQL 을 만들어 실행하고, 쓸 만할 때까지 고친다.
 4. 보고서 (`audit-report`)
 
-Top-down·Bottom-up 모두 시나리오 탐색은 main-agent 가 직접 하고, 시나리오 SQL 은 `sql-query` 에 적힌 시나리오 SQL 쓰는 법을 따른다.
+### Variant — `variant-scenario-generation`
+
+1. 질문 이해 (main-agent): 기준 시나리오 문서를 읽고 바꿀 조건과 유지할 조건을 정한다.
+2. 시나리오 탐색 (main-agent): 바꾼 조건으로 시나리오 SQL 을 새로 만들어 실행하고, 쓸 만할 때까지 고친다.
+3. 보고서 (`audit-report`)
+
+세 모드 모두 시나리오 탐색은 main-agent 가 직접 하고, 시나리오 SQL 은 `sql-query` 에 적힌 시나리오 SQL 쓰는 법을 따른다.
 
 ### 시나리오 검증 — `scenario-validation`
 
@@ -102,7 +111,7 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
 
 1. **읽기 전용**: `SELECT` 와 `WITH … SELECT` 만 쓴다. INSERT·UPDATE·DELETE·MERGE, DDL, PL/SQL 같은 변경 작업은 하지 않는다.
 2. **실재하는 이름만**: OKF 나 DB 로 확인하지 않은 테이블·컬럼·코드·조인을 쓰지 않는다.
-3. **시나리오 SQL 형식**: 시나리오 생성에서 만드는 SQL 은 한 줄 `SELECT`, 리터럴 기간, 맨 앞 열은 법인코드·법인명·문제금액이다. 주석·세미콜론·`FETCH FIRST`·바인드 변수를 쓰지 않고, 특정 거래처·사원을 조건에 고정하지 않는다.
+3. **시나리오 SQL 형식**: 시나리오 생성에서 만드는 SQL 은 한 줄 `SELECT`, 리터럴 기간, 맨 앞 열은 법인코드·법인명·문제금액이다. `WITH`·주석·세미콜론·`FETCH FIRST`·바인드 변수를 쓰지 않고, 특정 거래처·사원을 조건에 고정하지 않는다.
 4. **집계가 부풀지 않게**: 일대다 조인의 행 증가, 중복, NULL, 문자열 날짜, 통화가 섞인 금액, 삭제 표시를 확인한다.
 5. **SQL 도구는 `sql-query` 를 따른다**: `execute_sql` 은 결과를 최대 10행만 돌려주는 확인용이고, `submit_sql` 은 사용자 화면에 결과를 보여 주는 최종 제출용이다. `submit_sql` 은 `sql-query` 의 데이터 질문 마지막 제출(1회)에서만 쓰고, 시나리오 생성·검증·sub-agent 는 부르지 않는다. 두 도구가 하는 일(행 수 제한, 시간 제한, 전체 건수 세기)을 다른 skill 이나 sub-agent 에서 따로 시키지 않는다.
 6. **통계 도구는 한 곳에서만**: `screen_stat`, `find_duplicates`, `find_number_gaps`, `match_tables`, `list_tables`, `describe_table` 는 `bottomup-anomaly-explorer` 만 쓴다.
