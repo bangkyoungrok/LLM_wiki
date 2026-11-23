@@ -45,7 +45,7 @@ Oracle 스키마는 두 개다. `APPADAMSUSER` 는 업무 데이터, `SETADAMSUS
 
 ## 3. skill 고르기
 
-입력 JSON 에 `mode` 가 있으면 그 값으로 고른다: `top-down` → `topdown-scenario-generation`, `bottom-up` → `bottomup-scenario-generation`, `variant` → `variant-scenario-generation`. `mode` 가 없으면 아래 표처럼 요청을 보고 고른다.
+입력 JSON 에 `mode` 가 있으면 그 값으로 고른다: `top-down` → `topdown-scenario-generation`, `bottom-up` → `bottomup-scenario-generation`, `variant` → `variant-scenario-generation`, `drilldown` → 질문을 보고 `topdown-scenario-generation` 과 `bottomup-scenario-generation` 가운데 고르고, 헷갈리면 `bottomup-scenario-generation`. `mode` 가 없으면 아래 표처럼 요청을 보고 고른다.
 
 | 요청 | skill |
 |---|---|
@@ -86,6 +86,14 @@ Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출
 
 세 모드 모두 시나리오 탐색은 main-agent 가 직접 하고, 시나리오 SQL 은 `sql-query` 에 적힌 시나리오 SQL 쓰는 법을 따른다.
 
+### 드릴다운 입력
+
+입력은 드릴다운 JSON 과 직전 단계 보고서(`base_scenario_md`)다. 고른 skill 의 흐름을 그대로 따르고, 아래만 다르다.
+
+- 직전 보고서 「시나리오 JSON」의 `scenario_sql` 이 직전 SQL 이다. 그 SQL 이 읽는 테이블을 먼저 고른다.
+- 시나리오 SQL 은 `skills/sql-query/SKILL.md` 의 드릴다운 규칙대로 직전 SQL 에 조건을 더해 쓴다.
+- 보고서는 `skills/audit-report/SKILL.md` 형식 그대로 쓴다. 3절에는 직전 단계까지 걸러 낸 것과 이번 관점으로 더 좁힌 것을 쓴다. A-1 출발점에는 직전 시나리오 이름, 결과 수 변화(직전 → 이번), 질문의 관점 줄 전부(그대로), 입력 `pattern_ids` 를 쓴다.
+
 ### 시나리오 검증 — `scenario-validation`
 
 시나리오 1건을 실행해 보고, 5개 차원 30개 항목으로 판정한 뒤, 기존 시나리오와 중복인지 본다. 판정은 `PASS` / `INVALID` / `DUPLICATE` / `DB_UNAVAILABLE` 중 하나다. 생성 skill 안에서 SQL 을 돌려 본 것은 이 검증이 아니다.
@@ -124,5 +132,5 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
    | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
 
-8. **개인정보**: 보고서에서는 사람 이름과 계정을 가리고, 물리명과 SQL 은 정해진 자리에만 쓴다.
+8. **보고서 표기**: 보고서에는 사람 이름과 계정을 가리지 않고 그대로 쓴다. 물리명과 SQL 은 정해진 자리에만 쓴다.
 9. **실패는 그대로 밝힌다**: DB 나 도구가 없어 실행하지 못했으면 그 사실과 영향을 적는다. 성공한 것으로 가정하지 않는다.
