@@ -16,7 +16,7 @@
 | `top-down` | 도메인, 기간, 테이블 이름(모두 있으면) | top-down 감사 질문 1건이 담긴 JSON |
 | `bottom-up` | 도메인, 기간, 테이블 이름(모두 있으면) | bottom-up 감사 질문 1건이 담긴 JSON |
 | `variant` | 시나리오 ID, 도메인, 기간, 테이블 이름(모두 있으면) | variant 감사 질문 1건이 담긴 JSON |
-| `drilldown` | `question`(원본 질의), `stage`(현재 단계 정보), `base_scenario_md`(직전 단계까지의 누적 보고서 전문). 모두 꼭 있어야 함 | 드릴다운 JSON 1개(`proceed`, `accident_type`, `pattern_ids`, `perspective`, `question`, `reason`) |
+| `drilldown` | `question`(원본 질의), `stage`(현재 단계 정보), `base_scenario_md`(직전 단계 보고서 전문), `base_validation`(직전 단계 검증 결과). 모두 꼭 있어야 함 | 드릴다운 JSON 1개(`mode`, `proceed`, `accident_type`, `pattern_ids`, `perspective`, `question`, `reason`) |
 
 - `drilldown` 입력이 비었거나 형식이 틀리면 `proceed=false` 와 사유를 낸다.
 - 도메인이 없으면 전체 도메인, 기간이 없으면 직전 달 말일까지 12개월이다.
@@ -30,7 +30,7 @@
 - **질문은 데이터로 답할 수 있어야 한다.** 실제로 있는 거래 테이블과 기준 날짜·금액 컬럼으로 답할 수 있어야 한다.
 - **질문은 근거에 기대야 한다.** `okf/wiki` 의 패턴과 `okf/real-cases` 의 실제 사고 수법, 테이블 구조, 또는 `okf/wiki/scenario` 의 기존 시나리오에 연결한다.
 - **질문은 조건 단위다.** 특정 업체·거래처·사원·문서번호를 지목하지 않는다.
-- **모드마다 근거가 다르다.** top-down 은 부정 패턴과 실제 사고 문서, bottom-up 은 테이블 문서의 구조, variant 는 기존 시나리오 md, drilldown 은 누적 보고서와 드릴다운 패턴(`okf/wiki/patterns/perspective/`)을 쓴다.
+- **모드마다 근거가 다르다.** top-down 은 부정 패턴과 실제 사고 문서, bottom-up 은 테이블 문서의 구조, variant 는 기존 시나리오 md, drilldown 은 직전 단계 보고서와 드릴다운 패턴(`okf/wiki/patterns/perspective/`)을 쓴다.
 - **드릴다운은 좁힌다.** 드릴다운 질문의 결과는 늘 직전 단계 결과의 일부다. 원본 질의와 이전 관점은 그대로 두고 관점만 더한다. 기간을 늘리거나 조건을 풀거나 직전 결과 밖의 건을 보지 않는다.
 - **확인한 것과 가정을 나눈다.** 문서에 없거나 확인하지 못한 값은 지어내지 않고 `null`·`[]`·「미확인」으로 남긴다.
 
