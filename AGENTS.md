@@ -96,7 +96,7 @@ Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출
 
 ### 시나리오 검증 — `scenario-validation`
 
-시나리오 1건을 실행해 보고, 5개 차원 30개 항목으로 판정한 뒤, 기존 시나리오와 중복인지 본다. 판정은 `PASS` / `INVALID` / `DUPLICATE` / `DB_UNAVAILABLE` 중 하나다. 생성 skill 안에서 SQL 을 돌려 본 것은 이 검증이 아니다.
+시나리오 1건을 실행해 보고, 5개 차원 26개 항목으로 판정한 뒤, 기존 시나리오와 중복인지 본다. 판정은 `PASS` / `INVALID` / `DUPLICATE` / `DB_UNAVAILABLE` 중 하나다. 생성 skill 안에서 SQL 을 돌려 본 것은 이 검증이 아니다.
 
 ### 데이터 조회 — `sql-query`
 
