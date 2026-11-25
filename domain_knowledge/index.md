@@ -17,3 +17,4 @@
 - [software_development.md](operational_knowledge/software_development.md) : 시스템 개발, 사용자 권한 관리, API 연동 및 소프트웨어 유지보수 관련 실무 노하우와 사고 교훈
 - [logistics.md](operational_knowledge/logistics.md) : 물류 운송, 현장 설치/철거, 비용 산정 및 계약 조건 관리 실무 노하우와 사고 교훈
 - [marketing_contract.md](operational_knowledge/marketing_contract.md) : 마케팅 캠페인 기획, 인플루언서 협업, 비용 산정 및 계약 조건 관리 실무 노하우와 사고 교훈
+- [system_operation.md](operational_knowledge/system_operation.md) : AI 에이전트 시스템의 문서 처리 파이프라인, 데이터 저장소 관리, 버전 관리 및 배포 프로세스에 대한 실무 노하우와 사고 교훈

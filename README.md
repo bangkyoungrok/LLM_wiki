@@ -15,6 +15,7 @@
 
 | 경로 | full | t2s |
 |---|:---:|:---:|
+| `okf/` | ✓ | ✓ |
 | `domain_knowledge/` | ✓ | ✓ |
 | `skills/sql-query/` | ✓ | ✓ |
 | `sub-agents/schema-linker/` | ✓ | ✓ |

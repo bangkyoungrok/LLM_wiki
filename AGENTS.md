@@ -43,6 +43,14 @@ Oracle 스키마는 두 개다. `APPADAMSUSER` 는 업무 데이터, `SETADAMSUS
 
 질문을 보고 필요하다고 판단될 때만 `domain_knowledge/index.md` 에서 관련 문서를 골라 읽는다. 필요한 때는 질문에 나온 업무 용어·약어·규정·절차의 뜻이나 업무 배경을 OKF 문서(도메인 page, 용어집)만으로 알 수 없을 때다. 매번 먼저 읽지 않는다. 도메인 정보는 용어와 업무 배경을 잡는 데만 쓰고, 테이블·컬럼·코드값의 근거는 OKF 문서다.
 
+### 업무 규칙 참고 (biz-rules)
+
+도메인이나 테이블이 정해진 뒤, 그 업무의 흐름·통제·예외를 알아야 질문 이해나 결과 해석이 될 때만 쓴다. `okf/glossary/biz-rules/` 는 업무 매뉴얼(BQMS·GPPM·NERP)에서 추출한 프로세스 규칙(570개 문서, 도메인 12개)이다. 테이블·컬럼·코드값·조인을 고르거나 근거로 쓰지 않는다.
+
+- **정방향 (도메인 기준, Top-down·Bottom-up 의 요청·질문 이해)**: `okf/glossary/biz-rules/index.md` 에서 해당 도메인의 `okf/glossary/biz-rules/<도메인>/index.md` 를 읽고, 질문·요청의 용어와 프로세스와 맞는 규칙 문서 1~2개를 고른다. 해당 도메인 폴더가 없으면 건너뛴다.
+- **역방향 (테이블 기준, Bottom-up 시나리오 탐색)**: `okf/glossary/biz-rules/tables/index.md` 에서 이상치가 나온 테이블의 행을 찾고, `okf/glossary/biz-rules/tables/<테이블명>.md` 는 등급 A·B 인 행만 골라 본다(전체 읽기 금지). 필요한 규칙 문서 1~2개를 읽는다.
+- 규칙 문서로 「통제 위반(감사 가치 높음) vs 규칙에 정의된 예외(정상)」을 판정하고, 「왜 의심스러운가」의 근거로 쓴다. 읽은 문서에 없는 규칙 내용은 만들지 않는다.
+
 ## 3. skill 고르기
 
 입력 JSON 에 `mode` 가 있으면 그 값으로 고른다: `top-down` → `topdown-scenario-generation`, `bottom-up` → `bottomup-scenario-generation`, `variant` → `variant-scenario-generation`, `drilldown` → 질문을 보고 `topdown-scenario-generation` 과 `bottomup-scenario-generation` 가운데 고르고, 헷갈리면 `bottomup-scenario-generation`. `mode` 가 없으면 아래 표처럼 요청을 보고 고른다.
@@ -122,12 +130,13 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
 3. **시나리오 SQL 형식**: 시나리오 생성에서 만드는 SQL 은 한 줄 `SELECT`, 리터럴 기간, 맨 앞 열은 법인코드·법인명·문제금액이다. `WITH`·주석·세미콜론·`FETCH FIRST`·바인드 변수를 쓰지 않고, 특정 거래처·사원을 조건에 고정하지 않는다.
 4. **집계가 부풀지 않게**: 일대다 조인의 행 증가, 중복, NULL, 문자열 날짜, 통화가 섞인 금액, 삭제 표시를 확인한다.
 5. **SQL 도구는 `sql-query` 를 따른다**: `execute_sql` 은 결과를 최대 10행만 돌려주는 확인용이고, `submit_sql` 은 사용자 화면에 결과를 보여 주는 최종 제출용이다. `submit_sql` 은 `sql-query` 의 데이터 질문 마지막 제출(1회)에서만 쓰고, 시나리오 생성·검증·sub-agent 는 부르지 않는다. 두 도구가 하는 일(행 수 제한, 시간 제한, 전체 건수 세기)을 다른 skill 이나 sub-agent 에서 따로 시키지 않는다.
+
 6. **통계 도구는 한 곳에서만**: `screen_stat`, `find_duplicates`, `find_number_gaps`, `match_tables`, `list_tables`, `describe_table` 는 `bottomup-anomaly-explorer` 만 쓴다.
 7. **상한**: 아래를 넘지 않는다. 상한을 피하려고 같은 일을 나눠 다시 맡기지 않는다.
 
    | 누가 | 상한 |
    |---|---|
-   | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개 |
+    | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
    | 모든 sub-agent | 도구를 부르는 응답 12회, 테이블 문서 10개 |
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
    | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
