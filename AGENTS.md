@@ -130,13 +130,12 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
 3. **시나리오 SQL 형식**: 시나리오 생성에서 만드는 SQL 은 한 줄 `SELECT`, 리터럴 기간, 맨 앞 열은 법인코드·법인명·문제금액이다. `WITH`·주석·세미콜론·`FETCH FIRST`·바인드 변수를 쓰지 않고, 특정 거래처·사원을 조건에 고정하지 않는다.
 4. **집계가 부풀지 않게**: 일대다 조인의 행 증가, 중복, NULL, 문자열 날짜, 통화가 섞인 금액, 삭제 표시를 확인한다.
 5. **SQL 도구는 `sql-query` 를 따른다**: `execute_sql` 은 결과를 최대 10행만 돌려주는 확인용이고, `submit_sql` 은 사용자 화면에 결과를 보여 주는 최종 제출용이다. `submit_sql` 은 `sql-query` 의 데이터 질문 마지막 제출(1회)에서만 쓰고, 시나리오 생성·검증·sub-agent 는 부르지 않는다. 두 도구가 하는 일(행 수 제한, 시간 제한, 전체 건수 세기)을 다른 skill 이나 sub-agent 에서 따로 시키지 않는다.
-
 6. **통계 도구는 한 곳에서만**: `screen_stat`, `find_duplicates`, `find_number_gaps`, `match_tables`, `list_tables`, `describe_table` 는 `bottomup-anomaly-explorer` 만 쓴다.
 7. **상한**: 아래를 넘지 않는다. 상한을 피하려고 같은 일을 나눠 다시 맡기지 않는다.
 
    | 누가 | 상한 |
    |---|---|
-    | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
+   | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
    | 모든 sub-agent | 도구를 부르는 응답 12회, 테이블 문서 10개 |
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
    | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
