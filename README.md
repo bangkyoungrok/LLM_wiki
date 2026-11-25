@@ -8,7 +8,7 @@
 
 | 판 | 에이전트 파일 | 하는 일 |
 |---|---|---|
-| full | `AGENTS.md` | 감사 시나리오 생성(Top-down·Bottom-up), 시나리오 검증, 데이터 질문 답변 |
+| full | `AGENTS.md` | 감사 시나리오 생성(Top-down·Bottom-up·Variant), 시나리오 검증, 데이터 질문 답변 |
 | t2s | `AGENTS-t2s.md` | 데이터 질문 답변만 (조회·집계·목록·구조) |
 
 ## 구성
@@ -20,6 +20,7 @@
 | `sub-agents/term-grounding/` | ✓ | ✓ |
 | `skills/topdown-scenario-generation/` | ✓ | |
 | `skills/bottomup-scenario-generation/` | ✓ | |
+| `skills/variant-scenario-generation/` | ✓ | |
 | `skills/scenario-validation/` | ✓ | |
 | `skills/audit-report/` | ✓ | |
 | `sub-agents/topdown-hypothesizer/` | ✓ | |
