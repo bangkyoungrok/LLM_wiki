@@ -10,6 +10,7 @@
 - [GSTD_S104.15_ENG.md](business_document/GSTD_S104.15_ENG.md) : 자회사 및 본사의 Sell-out 예측(Sell-out FCST) 수립, AI 예측 활용, 그리고 이를 기반으로 한 Sell-in 가이드(Sell-in Guide) 생성 및 WOS(재고주회) 관리 프로세스를 정의한다.
 - [GSTD_S106.10_ENG.md](business_document/GSTD_S106.10_ENG.md) : TIM(Trade Investment Management)의 개념, Trade Spend 및 Marketing Spend 분류 체계, 관리 프로세스(CORES/SMIT), 그리고 핵심 성과 지표(KPI) 산식과 기준을 정의한 표준 문서.
 - [파일 첨부 오류 분석 결과.md](business_document/파일 첨부 오류 분석 결과.md) : 파일 첨부 시 허용되지 않는 형식(.crx, .exe)으로 인한 업로드 차단 사례와 첨부 서비스의 기술적·보안적 제한 조건을 분석한 결과임
+- [GSTD_Y101.a1_KOR.md](business_document/GSTD_Y101.a1_KOR.md) : 통상업무의 정의, 목적, 정책 및 관련 위험(법규 준수/재무적) 관리 기준을 정의한 문서.
 
 ## operational_knowledge/
 사고 사례와 참고자료의 실무 지식을 업무 주제별로 누적한 지식. 처리 방법·주의사항·교훈을 확인할 때 참조.

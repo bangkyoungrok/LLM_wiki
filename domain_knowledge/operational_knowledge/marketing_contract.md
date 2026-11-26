@@ -45,7 +45,6 @@ updated: 2026-11-13
 - [marketing_contract-062] 매체 데이터베이스(MDB)에 편집된 이미지, 로고, 최종 광고 자료를 업로드할 때 카테고리 분류 및 키워드 지정, 최종 광고 자료와의 링크 작업을 수행해야 함 (출처: p.10) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.10)
 - [marketing_contract-063] 온라인 배너 제작 시 고객 제공 화면 디자인에 따라 정적/애니메이션 배너(JPEG, GIF, MP3/4, WebM)를 생성함 (출처: p.10) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.10)
 - [marketing_contract-064] 기술적·조직적 보안 조치(Exhibit B)는 ISO/IEC 27001 표준 또는 유사한 업계 인식을 준수해야 하며, 변경 사항은 서면으로 합의해야 함 (출처: p.46-47) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.46-47)
-
 - [marketing_contract-065] 물리적 보안 조치로 개인 데이터가 저장된 문서 및 보조 저장 매체는 잠금 장치로 보호된 안전한 장소에 보관해야 함 (출처: p.47) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.47)
 - [marketing_contract-066] 암호화 의무는 시스템 외부 전송 시, 원격 접속 시, 휴대용 기기 사용 시, 법이 요구하는 경우에 적용됨 (출처: p.43) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.43)
 - [marketing_contract-067] Company는 법 변경 또는 감독 당국 요구에 따라 GDTP를 수정할 수 있으며, 1개월 전 서면 통지 시 Processor가 1개월 내 이의 없으면 수락된 것으로 간주함 (출처: p.45) (출처: BQMS#AZfFic-sLY0VtEET.pdf p.45)
