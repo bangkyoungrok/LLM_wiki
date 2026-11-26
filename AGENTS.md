@@ -104,7 +104,7 @@ Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출
 
 ### 시나리오 검증 — `scenario-validation`
 
-시나리오 1건을 실행해 보고, 걸린 행이 소명되는지 소명 경로를 모두 확인한 뒤, 소명되지 않은 행이 남으면 기존 시나리오와 중복인지 본다. 판정은 `PASS` / `EXPLAINED` / `INVALID` / `DUPLICATE` / `DB_UNAVAILABLE` 중 하나다. 생성 skill 안에서 SQL 을 돌려 본 것은 이 검증이 아니다.
+시나리오 1건을 실행해 보고, 5개 차원 26개 항목으로 판정한 뒤, 기존 시나리오와 중복인지 본다. 판정은 `PASS` / `INVALID` / `DUPLICATE` / `DB_UNAVAILABLE` 중 하나다. 생성 skill 안에서 SQL 을 돌려 본 것은 이 검증이 아니다.
 
 ### 데이터 조회 — `sql-query`
 
@@ -139,7 +139,6 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
    | 모든 sub-agent | 도구를 부르는 응답 12회, 테이블 문서 10개 |
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
    | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
-   | `scenario-validation` | 소명 확인 `execute_sql` 10회(원본 SQL 실행, 코드값 조회, 중복 판별 조회는 따로) |
 
 8. **보고서 표기**: 보고서에는 사람 이름과 계정을 가리지 않고 그대로 쓴다. 물리명과 SQL 은 정해진 자리에만 쓴다.
 9. **실패는 그대로 밝힌다**: DB 나 도구가 없어 실행하지 못했으면 그 사실과 영향을 적는다. 성공한 것으로 가정하지 않는다.

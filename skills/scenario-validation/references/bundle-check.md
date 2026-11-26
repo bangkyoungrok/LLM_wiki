@@ -11,8 +11,7 @@
 ## 2. 객체명 점검 → `invalid_query_names`
 
 - FROM/JOIN 의 각 객체를 데이터 사전 문서 frontmatter 의 `query_name`(`OWNER.OBJECT`)과 대조한다. 문서 위치: `okf/schemas/<OWNER>/tables/<OBJ>.md` 또는 `okf/schemas/<OWNER>/views/<OBJ>.md`.
-- OWNER 없이 쓴 이름은 위반이 아니다. 객체 이름으로 `okf/schemas/*/tables/<OBJ>.md`·`okf/schemas/*/views/<OBJ>.md` 를 찾아 대조한다. 같은 이름이 여러 OWNER 에 있으면 모두 대조하고 「확인 필요」에 적는다.
-- 다음은 `invalid_query_names` 에 SQL 에 적힌 그대로 넣는다: 데이터 사전 문서가 없는 객체, 시노님, `query_name` 과 OWNER 가 다른 이름.
+- 다음은 `invalid_query_names` 에 SQL 에 적힌 그대로 넣는다: 데이터 사전 문서가 없는 객체, 시노님, OWNER 없이 쓴 이름, `query_name` 과 OWNER 가 다른 이름.
 - CTE 이름(`WITH x AS`)과 인라인 뷰 별칭은 객체가 아니므로 제외한다.
 - 하나라도 있으면 **실행하지 않는다**.
 
@@ -37,7 +36,7 @@
 | `usable: false` | `unsafe_joins` 에 `"<A.col> = <B.col> (usable:false)"` |
 | `cartesian_risk: m2m` | `unsafe_joins` 에 `"<A.col> = <B.col> (m2m)"` |
 | index.md 의 직접 조인 금지 쌍 | `unsafe_joins` 에 `"<A> - <B> (직접 조인 금지)"` |
-| 조인 문서 없음 | `unsafe_joins` 에 넣지 않고 출력에 "조인 문서 없음(2단계 쿼리 또는 추측 조인)"으로 기록. 행이 부풀었는지는 소명 확인의 「조회 착시」에서 본다 |
+| 조인 문서 없음 | `unsafe_joins` 에 넣지 않고 출력에 "조인 문서 없음(2단계 쿼리 또는 추측 조인)"으로 기록. 심판 D5 가 판정 |
 | 문서 있고 안전 | 출력에 `usable`·`cartesian_risk`·`join_type_hint`·`fanout` 값 기록 |
 
 ## 5. 코드값 의미 확인
@@ -51,7 +50,7 @@ FROM   SETADAMSUSER.TC_CF_COMM_CODE
 WHERE  CODE_ID = '<코멘트의 코드ID>' AND DELETE_YN = '0'
 ```
 
-- 리터럴이 코드 목록에 없으면 출력에 "미등록 코드값"으로 기록하고 「확인 필요」에 올린다.
+- 리터럴이 코드 목록에 없으면 출력에 "미등록 코드값"으로 기록 (심판 D2 근거).
 
 ## 6. 삭제 플래그 규약
 
@@ -62,7 +61,7 @@ WHERE  CODE_ID = '<코멘트의 코드ID>' AND DELETE_YN = '0'
 | 공통코드 (`TC_CF_COMM_CODE` 등) | `'0'` | `'1'` |
 | 시나리오 계열 (`TN_AD_SCENARIO_*`, `V_SCN_*`) | `'N'` | `'Y'` |
 
-`scenario_sql` 이 `DELETE_YN = 'N'` 같은 리터럴을 쓰면 해당 테이블 문서로 규약을 확인한다. 어긋나면 출력에 기록한다. 그 밖의 테이블은 문서의 컬럼 코멘트를 따른다.
+`scenario_sql` 이 `DELETE_YN = 'N'` 같은 리터럴을 쓰면 해당 테이블 문서로 규약을 확인한다. 어긋나면 출력에 기록 (심판 D3·L3 근거). 그 밖의 테이블은 문서의 컬럼 코멘트를 따른다.
 
 ## 7. PII 점검 → `pil_columns`
 
@@ -78,7 +77,7 @@ WHERE  CODE_ID = '<코멘트의 코드ID>' AND DELETE_YN = '0'
 | `invalid_query_names` 1개 이상 | 하지 않음 → `row_count: null` (미실행) |
 | 그 외 (컬럼 누락·불안전 조인·PII 포함) | 실행 |
 
-실행하지 않으면 소명 확인을 하지 않고 `INVALID` 로 판정한다.
+실행하지 않아도 4단계(심판)까지 진행한다.
 
 ## 9. bundle_check 작성
 
