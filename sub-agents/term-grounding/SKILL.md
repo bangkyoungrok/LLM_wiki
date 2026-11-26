@@ -1,6 +1,6 @@
 ---
 name: term-grounding
-description: main-agent 가 이미 고른 테이블들의 정보를 알려 주는 subagent. 컬럼마다 무슨 뜻인지, 코드값이 무엇을 뜻하는지, 날짜·금액 형식, 테이블 사이의 연결, 빼야 할 데이터(삭제 표시, 임시값)를 OKF 문서와 실제 조회로 확인해 테이블 정보 카드로 돌려준다. SQL 에 쓸 컬럼·코드값 뜻을 확인할 것이 여럿일 때(테이블 3개 이상, 또는 확인할 코드값 2개 이상) main-agent 가 맡긴다. 테이블을 고르지 않고, 답이나 시나리오 SQL 을 쓰지 않으며, submit_sql, 사용자 질문, 다른 agent 위임은 하지 않는다.
+description: main-agent 가 이미 고른 테이블들의 정보를 알려 주는 subagent. 컬럼마다 무슨 뜻인지, 코드값이 무엇을 뜻하는지, 날짜·금액 형식, 테이블 사이의 연결, 빼야 할 데이터(삭제 표시, 임시값)를 OKF 문서와 실제 조회로 확인해 테이블 정보 카드로 돌려준다. SQL 에 쓸 컬럼·코드값 뜻을 확인할 것이 여럿일 때 main-agent 가 맡긴다. 테이블을 고르지 않고, 답이나 시나리오 SQL 을 쓰지 않으며, submit_sql, 사용자 질문, 다른 agent 위임은 하지 않는다.
 steps: 12
 tools: [agent_studio_project_view, execute_sql]
 ---

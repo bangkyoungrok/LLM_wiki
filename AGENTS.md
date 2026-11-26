@@ -25,7 +25,7 @@ main-agent 는 요청을 읽고 필요한 상황에 맞는 skill 을 불러 쓴�
 | `okf/glossary/` | 업무 용어(`okf/glossary/biz-knowledge/`)와 업무 규칙(`okf/glossary/biz-rules/`) |
 | `okf/references/` | 코드값 샘플, 그레인 샘플, 기존 시나리오 목록 등 보조 자료 |
 | `okf/t2s/` | SQL 작성 규칙(`okf/t2s/rules/`)과 승인된 예제(`okf/t2s/examples/`) |
-| `okf/wiki/` | 감사 시나리오 지식: 부정 패턴(`okf/wiki/patterns/fraud/`, P-001~P-032), 이상징후 패턴(`okf/wiki/patterns/anomaly/`, P-101~P-141), 정상 업무 패턴(`okf/wiki/normal-patterns.md`), 위험 해석(`okf/wiki/risk-interpretation.md`), 선별 기준(`okf/wiki/criteria/`), Variant 의 기준 시나리오 문서(`okf/wiki/scenario/`) |
+| `okf/wiki/` | 감사 시나리오 지식: 부정 패턴(`okf/wiki/patterns/fraud/`, P-001~P-032), 정상 업무 패턴(`okf/wiki/normal-patterns.md`), Variant 의 기준 시나리오 문서(`okf/wiki/scenario/`) |
 | `okf/real-cases/` | 실제 사고 사례 — 시나리오 생성·변형 단서(수법·신호·취약점, 패턴별 역인덱스) |
 | `skills/` | main-agent 가 필요할 때 부르는 기술 |
 | `sub-agents/` | 정해진 단계를 맡는 sub-agent 정의 |
@@ -41,14 +41,13 @@ Oracle 스키마는 두 개다. `APPADAMSUSER` 는 업무 데이터, `SETADAMSUS
 
 ### 도메인 정보 참고
 
-질문을 보고 필요하다고 판단될 때만 `domain_knowledge/index.md` 에서 관련 문서를 골라 읽는다. 필요한 때는 질문에 나온 업무 용어·약어·규정·절차의 뜻이나 업무 배경을 OKF 문서(도메인 page, 용어집)만으로 알 수 없을 때다. 매번 먼저 읽지 않는다. 도메인 정보는 용어와 업무 배경을 잡는 데만 쓰고, 테이블·컬럼·코드값의 근거는 OKF 문서다.
+데이터 질문(`sql-query`)에서만 쓴다. 시나리오 생성(Top-down·Bottom-up·Variant)에서는 읽지 않는다. 질문을 보고 필요하다고 판단될 때만 `domain_knowledge/index.md` 에서 관련 문서를 골라 읽는다. 필요한 때는 질문에 나온 업무 용어·약어·규정·절차의 뜻이나 업무 배경을 OKF 문서(도메인 page, 용어집)만으로 알 수 없을 때다. 매번 먼저 읽지 않는다. 도메인 정보는 용어와 업무 배경을 잡는 데만 쓰고, 테이블·컬럼·코드값의 근거는 OKF 문서다.
 
 ### 업무 규칙 참고 (biz-rules)
 
 도메인이나 테이블이 정해진 뒤, 그 업무의 흐름·통제·예외를 알아야 질문 이해나 결과 해석이 될 때만 쓴다. `okf/glossary/biz-rules/` 는 업무 매뉴얼(BQMS·GPPM·NERP)에서 추출한 프로세스 규칙(570개 문서, 도메인 12개)이다. 테이블·컬럼·코드값·조인을 고르거나 근거로 쓰지 않는다.
 
-- **정방향 (도메인 기준, Top-down·Bottom-up 의 요청·질문 이해)**: `okf/glossary/biz-rules/index.md` 에서 해당 도메인의 `okf/glossary/biz-rules/<도메인>/index.md` 를 읽고, 질문·요청의 용어와 프로세스와 맞는 규칙 문서 1~2개를 고른다. 해당 도메인 폴더가 없으면 건너뛴다.
-- **역방향 (테이블 기준, Bottom-up 시나리오 탐색)**: `okf/glossary/biz-rules/tables/index.md` 에서 이상치가 나온 테이블의 행을 찾고, `okf/glossary/biz-rules/tables/<테이블명>.md` 는 등급 A·B 인 행만 골라 본다(전체 읽기 금지). 필요한 규칙 문서 1~2개를 읽는다.
+- `okf/glossary/biz-rules/index.md` 에서 해당 도메인의 `okf/glossary/biz-rules/<도메인>/index.md` 를 읽고, 질문·요청의 용어와 프로세스와 맞는 규칙 문서들을 고른다. 해당 도메인 폴더가 없으면 건너뛴다.
 - 규칙 문서로 「통제 위반(감사 가치 높음) vs 규칙에 정의된 예외(정상)」을 판정하고, 「왜 의심스러운가」의 근거로 쓴다. 읽은 문서에 없는 규칙 내용은 만들지 않는다.
 
 ## 3. skill 고르기
@@ -100,7 +99,7 @@ Top-down 과 Bottom-up 이 헷갈리면: 규칙·통제·부정 수법에서 출
 
 - 직전 보고서 「시나리오 JSON」의 `scenario_sql` 이 직전 SQL 이다. 그 SQL 이 읽는 테이블을 먼저 고른다.
 - 시나리오 SQL 은 `skills/sql-query/SKILL.md` 의 드릴다운 규칙대로 직전 SQL 에 조건을 더해 쓴다.
-- 보고서는 `skills/audit-report/SKILL.md` 형식 그대로 쓴다. 3절에는 직전 단계까지 걸러 낸 것과 이번 관점으로 더 좁힌 것을 쓴다. A-1 출발점에는 직전 시나리오 이름, 결과 수 변화(직전 → 이번), 질문의 관점 줄 전부(그대로), 입력 `pattern_ids` 를 쓴다.
+- 보고서는 `skills/audit-report/SKILL.md` 형식 그대로 쓴다. 3절에는 직전 단계까지 걸러 낸 것과 이번 관점으로 더 좁힌 것을 쓴다. A-1 출발점에는 직전 시나리오 이름, 결과 수 변화(직전 → 이번), 질문의 관점 줄 전부(그대로)를 쓴다.
 
 ### 시나리오 검증 — `scenario-validation`
 
@@ -135,10 +134,10 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
 
    | 누가 | 상한 |
    |---|---|
-    | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
+    | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개 |
    | 모든 sub-agent | 도구를 부르는 응답 12회, 테이블 문서 10개 |
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
-   | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
+   | `bottomup-anomaly-explorer` | 통계 도구 12회 |
 
 8. **보고서 표기**: 보고서에는 사람 이름과 계정을 가리지 않고 그대로 쓴다. 물리명과 SQL 은 정해진 자리에만 쓴다.
 9. **실패는 그대로 밝힌다**: DB 나 도구가 없어 실행하지 못했으면 그 사실과 영향을 적는다. 성공한 것으로 가정하지 않는다.
