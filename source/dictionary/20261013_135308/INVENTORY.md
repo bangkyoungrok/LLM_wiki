@@ -1,0 +1,29 @@
+# 딕셔너리 추출 인벤토리
+
+- 스냅샷: `20261013_135308`  (추출 시각 2026-10-13T13:53:08+09:00)
+- DB 별칭: PRD, 접속 계정: AIAGT, Oracle 버전: 19.27.0.0.0
+- 대상 OWNER: APPADAMSUSER, SETADAMSUSER
+
+| CSV | 원천 뷰 | 필수 | 행 수 | 상태 | 소요(s) | 비고 |
+|---|---|---|---|---|---|---|
+| objects.csv | ALL_OBJECTS + ALL_USERS | Y | 367 | ok | 0.2 |  |
+| tables.csv | ALL_TABLES | Y | 329 | ok | 0.1 |  |
+| tab_comments.csv | ALL_TAB_COMMENTS | Y | 367 | ok | 0.1 |  |
+| columns.csv | ALL_TAB_COLUMNS | Y | 13622 | ok | 0.7 | 변형 3 사용 |
+| col_comments.csv | ALL_COL_COMMENTS | Y | 13579 | ok | 0.2 |  |
+| constraints.csv | ALL_CONSTRAINTS | Y | 46 | ok | 0.0 |  |
+| cons_columns.csv | ALL_CONS_COLUMNS | Y | 133 | ok | 0.1 |  |
+| tab_privs.csv | ALL_TAB_PRIVS | Y | 375 | ok | 0.0 |  |
+| col_privs.csv | ALL_COL_PRIVS | Y | 0 | ok | 0.0 |  |
+| indexes.csv | ALL_INDEXES | Y | 118 | ok | 0.0 |  |
+| ind_columns.csv | ALL_IND_COLUMNS | Y | 276 | ok | 0.1 |  |
+| views.csv | ALL_VIEWS |  | 38 | ok | 0.1 |  |
+| synonyms.csv | ALL_SYNONYMS |  | 1099 | ok | 0.0 |  |
+| col_stats.csv | ALL_TAB_COL_STATISTICS |  | 11107 | ok | 0.4 |  |
+| dependencies.csv | ALL_DEPENDENCIES |  | 88 | ok | 0.1 |  |
+| part_keys.csv | ALL_PART_KEY_COLUMNS |  | 1 | ok | 0.0 |  |
+| mviews.csv | ALL_MVIEWS |  | 0 | ok | 0.0 |  |
+| session_roles.csv | SESSION_ROLES |  | 3 | ok | 0.0 |  |
+| session_privs.csv | SESSION_PRIVS |  | 12 | ok | 0.0 |  |
+
+제외한 뷰: ALL_SOURCE(프로시저 본문), 시스템·권한 관리 뷰, 세그먼트, 히스토그램, AUD$ 계열 (이번 범위 밖).

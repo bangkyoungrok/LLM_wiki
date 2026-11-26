@@ -79,7 +79,7 @@ SQL 을 쓰고 실행하는 방법은 이 skill 한 곳에 있다. 다른 skill 
 
 어떤 테이블이 있는지, 컬럼·조인 구조가 어떤지처럼 문서만으로 답할 수 있는 질문은 SQL 도구를 부르지 않는다.
 
-## 5. 시나리오 SQL (Top-down·Bottom-up·Variant 시나리오 탐색)
+## 5. 시나리오 SQL (Top-down·Bottom-up·Variant 시나리오 탐색)조합
 
 시나리오 SQL 은 보고서 「시나리오 JSON」과 다음 단계 프로그램이 글자 그대로 쓴다.
 

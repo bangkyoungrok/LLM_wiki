@@ -135,7 +135,7 @@ Sub-agent 는 이 대화를 보지 못한다. 맡길 때는 그 sub-agent 정의
 
    | 누가 | 상한 |
    |---|---|
-   | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
+    | main-agent | `execute_sql` 20회(데이터 조회, 시나리오 탐색), 직접 읽는 테이블 문서 10개, biz-rules 규칙 문서 요청당 최대 4개(목차·tables/index.md·tables/<테이블>.md 의 A·B 행 조회는 목차라 별도) |
    | 모든 sub-agent | 도구를 부르는 응답 12회, 테이블 문서 10개 |
    | `schema-linker`, `term-grounding` | `execute_sql` 6회 |
    | `bottomup-anomaly-explorer` | 통계 도구 12회, 관련 테이블로 넓히기 1번 |
